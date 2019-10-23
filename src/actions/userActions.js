@@ -16,6 +16,11 @@ export const login = user => async dispatch => {
       data: { user: createdUser }
     } = await userService.login({ user });
     dispatch(saveUser(createdUser));
+    /**
+     * TODO remove this when auth is working
+     * At the moment I have to save the session manually in here because the login is mocked
+     */
+    dispatch(saveSession({}));
   } catch (err) {
     throw new SubmissionError({
       _error: err.data.error

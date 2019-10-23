@@ -1,8 +1,17 @@
 import api from 'api';
 
 class UserService {
-  static login(user) {
-    return api.post('/users/sign_in', user);
+  static login() {
+    /**
+     * TODO
+     * I mocked the login res because auth is not implemented yet on openform api
+     * It should be replaced later with the proper endpoint
+     */
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve({ data: { user: { name: 'john', email: 'john@doe' } } });
+      }, 300);
+    });
   }
 
   static logout() {

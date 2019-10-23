@@ -6,6 +6,7 @@ import { persistReducer } from 'redux-persist';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 
 import session from './sessionReducer';
+import forms from './formReducer';
 
 const sessionPersistConfig = {
   key: 'session',
@@ -17,6 +18,7 @@ const sessionPersistConfig = {
 const rootReducer = history =>
   combineReducers({
     form,
+    forms,
     session: persistReducer(sessionPersistConfig, session),
     router: connectRouter(history)
   });
