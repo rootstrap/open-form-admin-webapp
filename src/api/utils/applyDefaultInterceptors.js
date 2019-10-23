@@ -3,6 +3,7 @@ import { saveSession, logout } from 'actions/userActions';
 const ACCESS_TOKEN = 'access-token';
 const UID = 'uid';
 const CLIENT = 'client';
+const RS_API_KEY = 'RS-API-KEY';
 
 const UNAUTHORIZED = 401;
 
@@ -15,6 +16,7 @@ const defaultRequestInterceptors = store => [
         request.headers = {
           ...request.headers,
           [ACCESS_TOKEN]: token,
+          [RS_API_KEY]: process.env.RS_API_KEY,
           client,
           uid
         };
