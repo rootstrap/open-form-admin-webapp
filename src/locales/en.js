@@ -21,5 +21,7 @@ export default {
   'email.invalid': 'You must enter a valid email',
   'password.presence': 'You must enter a password to continue',
   'passwordConfirmation.presence': 'You must enter a password confirmation to continue',
-  'passwordConfirmation.equality': 'Your password confirmation must be equal to the password'
+  'passwordConfirmation.equality': 'Your password confirmation must be equal to the password',
+
+  'nav.create-form': 'Create form'
 };
