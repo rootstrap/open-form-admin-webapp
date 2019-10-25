@@ -1,6 +1,6 @@
 import React from 'react';
 import { bool, string, node } from 'prop-types';
-import { Route, Redirect, useLocation } from 'react-router-dom';
+import { Route, Redirect, useLocation, Link } from 'react-router-dom';
 
 import routes from 'constants/routesPaths';
 import { useSession } from 'hooks';
@@ -11,6 +11,13 @@ const PrivateRoute = ({ children, exact = false, path }) => {
 
   return authenticated ? (
     <Route exact={exact} path={path}>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/create-form">Create Form</Link>
+          </li>
+        </ul>
+      </nav>
       {children}
     </Route>
   ) : (

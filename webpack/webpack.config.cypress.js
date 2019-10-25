@@ -88,13 +88,6 @@ module.exports = {
               plugins: () => [require('autoprefixer')],
               sourceMap: true
             }
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              includePaths: [path.resolve(__dirname, '../src', 'scss')],
-              sourceMap: true
-            }
           }
         ]
       }

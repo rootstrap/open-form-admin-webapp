@@ -1,11 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import { ReactComponent as Logo } from 'assets/logo.svg';
+import Logo from './Logo';
 
-const Header = () => (
-  <header className="header">
-    <Logo className="header__logo" />
+const Header = ({ children }) => (
+  <header>
+    <Logo />
+    {children}
   </header>
 );
+
+Header.propTypes = {
+  children: PropTypes.node
+};
 
 export default Header;

@@ -6,6 +6,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { AppContainer, setConfig } from 'react-hot-loader';
 import { IntlProvider } from 'react-intl';
 import includes from 'lodash/includes';
+import 'normalize.css';
 
 import api from 'api';
 import applyDefaultInterceptors from 'api/utils/applyDefaultInterceptors';
@@ -13,9 +14,6 @@ import configureStore from 'store/configureStore';
 import App from 'components/App';
 import locales from 'locales';
 import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE } from 'constants/constants';
-import 'styles/styles.scss';
-
-require('./favicon.ico'); // Tell webpack to load favicon.ico
 
 setAutoFreeze(false);
 
