@@ -156,7 +156,6 @@
     "nyc": "14.1.1",
     "opn": "5.3.0",
     "optimize-css-assets-webpack-plugin": "5.0.1",
-    "postcss-loader": "3.0.0",
     "prettier": "1.18.2",
     "react-hot-loader": "4.6.5",
     "react-test-renderer": "16.5.2",

@@ -2,25 +2,25 @@ import React from 'react';
 import { Field } from 'formik';
 import PropTypes from 'prop-types';
 
-import Select from 'components/common/Select';
+import TextInput from 'components/common/TextInput';
 import FormGroup from 'components/common/FormGroup';
 import Label from 'components/common/Label';
 
-const FormikSelect = ({ name, label, children }) => (
+const FormikTextInput = ({ name, label, type = 'text' }) => (
   <Field name={name}>
     {({ field }) => (
       <FormGroup>
         <Label htmlFor={name}>{label}</Label>
-        <Select {...field}>{children}</Select>
+        <TextInput {...field} type={type} />
       </FormGroup>
     )}
   </Field>
 );
 
-FormikSelect.propTypes = {
+FormikTextInput.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired
+  type: PropTypes.string
 };
 
-export default FormikSelect;
+export default FormikTextInput;

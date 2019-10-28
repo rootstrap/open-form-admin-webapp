@@ -10,7 +10,7 @@ import routes from '../routes';
 import theme from '../constants/theme';
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,700,800&display=swap');
   body {
     font-family: 'Nunito Sans', sans-serif;
   }
