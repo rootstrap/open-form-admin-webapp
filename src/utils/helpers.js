@@ -1,5 +1,4 @@
 import queryString from 'query-string';
-import isEmpty from 'lodash/isEmpty';
 
 export const parseInputErrors = error => {
   if (!error) {
@@ -12,7 +11,7 @@ export const parseInputErrors = error => {
 };
 
 export const applyQueryParams = (url, params = {}) => {
-  if (isEmpty(params)) {
+  if (Object.keys(params).length <= 0) {
     return url;
   }
   const queryParams = queryString.stringify(params);

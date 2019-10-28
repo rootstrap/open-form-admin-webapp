@@ -21,14 +21,14 @@ const CreateFormPage = () => {
 
   useEffect(() => {
     dispatch(fetchFormCategories());
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
       <Header>
         <Title>Create new form</Title>
       </Header>
-      <Formik initialValues={{ category: '' }} onSubmit={handleSubmit}>
+      <Formik initialValues={{ name: '', category: '' }} onSubmit={handleSubmit}>
         <Form>
           <TextInput name="name" label="Name" />
           <Select name="category" label="Category">

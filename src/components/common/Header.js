@@ -2,15 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import Logo from './Logo';
-
-const Version = styled.div`
-  letter-spacing: -0.3px;
-  font-weight: bold;
-  font-size: 0.9em;
-  margin-bottom: 0.5em;
-  color: ${({ theme }) => theme.color.primary};
-`;
+import Logo from 'components/common/Logo';
+import Version from 'components/common/Version';
 
 const Header = ({ children, className }) => (
   <header className={className}>

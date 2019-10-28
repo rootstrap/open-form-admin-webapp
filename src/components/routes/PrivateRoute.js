@@ -38,7 +38,8 @@ const PrivateRoute = ({ children, exact = false, path, hideMenu }) => {
 PrivateRoute.propTypes = {
   children: node.isRequired,
   path: string.isRequired,
-  exact: bool
+  exact: bool,
+  hideMenu: bool
 };
 
 export default PrivateRoute;

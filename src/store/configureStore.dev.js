@@ -4,26 +4,16 @@
 
 import { createStore, compose, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import { createLogger } from 'redux-logger';
 import { persistStore } from 'redux-persist';
-import _ from 'lodash';
 
 import rootReducer from 'reducers';
 
 export default function configureStore(initialState) {
-  const logger = createLogger({
-    collapsed: true,
-    predicate: (getState, { type }) =>
-      !_.startsWith(type, '@@router') && !_.startsWith(type, '@@redux-form')
-  });
-
-  const middewares = [thunkMiddleware, logger];
-
   const store = createStore(
     rootReducer,
     initialState,
     compose(
-      applyMiddleware(...middewares),
+      applyMiddleware(thunkMiddleware),
       window.__REDUX_DEVTOOLS_EXTENSION__ ? window.window.__REDUX_DEVTOOLS_EXTENSION__() : f => f // add support for Redux dev tools
     )
   );
