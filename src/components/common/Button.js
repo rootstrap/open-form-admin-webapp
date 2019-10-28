@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Button = styled.button`
+export default styled.button`
   box-shadow: 0px 3px 6px rgba(48, 83, 115, 0.09893);
   color: #fff;
   padding: 0.7em 0.9em;
@@ -12,5 +12,3 @@ const Button = styled.button`
     border-radius: ${theme.border.radius};
   `};
 `;
-
-export default Button;

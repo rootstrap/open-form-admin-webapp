@@ -5,9 +5,7 @@ import { persistStore } from 'redux-persist';
 import rootReducer from 'reducers';
 
 export default function configureStore(initialState, isServerSide = false) {
-  const middlewares = [thunkMiddleware];
-
-  const store = createStore(rootReducer, initialState, applyMiddleware(...middlewares));
+  const store = createStore(rootReducer, initialState, applyMiddleware(thunkMiddleware));
 
   if (isServerSide) {
     return { store };

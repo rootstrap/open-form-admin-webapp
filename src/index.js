@@ -5,7 +5,6 @@ import { setAutoFreeze } from 'immer';
 import { PersistGate } from 'redux-persist/integration/react';
 import { AppContainer, setConfig } from 'react-hot-loader';
 import { IntlProvider } from 'react-intl';
-import includes from 'lodash/includes';
 import 'normalize.css';
 
 import api from 'api';
@@ -43,7 +42,7 @@ if (!window.Intl) {
 }
 
 const usersLocale = navigator.language.split('-')[0];
-const supportedUserLocale = includes(SUPPORTED_LANGUAGES, usersLocale);
+const supportedUserLocale = SUPPORTED_LANGUAGES.includes(usersLocale);
 const locale = supportedUserLocale ? usersLocale : DEFAULT_LANGUAGE;
 const messages = locales[locale];
 
