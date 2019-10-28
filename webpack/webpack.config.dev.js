@@ -72,19 +72,12 @@ export default {
       { test: /\.(jpe?g|png|gif)$/i, loader: 'file-loader?name=[name].[ext]' },
       { test: /\.ico$/, loader: 'file-loader?name=[name].[ext]' },
       {
-        test: /(\.css|\.scss)$/,
+        test: /\.css$/i,
         use: [
           'style-loader',
           {
             loader: 'css-loader',
             options: {
-              sourceMap: true
-            }
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: () => [require('autoprefixer')],
               sourceMap: true
             }
           }

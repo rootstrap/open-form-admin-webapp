@@ -1,16 +1,18 @@
 import React, { useEffect } from 'react';
-import { Formik, Form } from 'formik';
+import { Formik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { fetchFormCategories } from 'actions/formActions';
 import { getFormCategories } from 'selectors/formSelectors';
 import Select from 'components/formik/Select';
+import TextInput from 'components/formik/TextInput';
 import Button from 'components/common/Button';
 import Header from 'components/common/Header';
 import Title from 'components/common/Title';
+import Form from 'components/common/Form';
 
 function handleSubmit(values) {
-  console.log(values);
+  alert(JSON.stringify(values));
 }
 
 const CreateFormPage = () => {
@@ -24,11 +26,12 @@ const CreateFormPage = () => {
   return (
     <>
       <Header>
-        <Title>title</Title>
+        <Title>Create new form</Title>
       </Header>
       <Formik initialValues={{ category: '' }} onSubmit={handleSubmit}>
         <Form>
-          <Select name="category">
+          <TextInput name="name" label="Form's name" />
+          <Select name="category" label="Category">
             {formCategories.map(({ id, name }) => (
               <option key={id} value={id}>
                 {name}
