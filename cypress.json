@@ -1,9 +1,0 @@
-{
-  "baseUrl": "http://localhost:8000",
-  "indexUrl": "/",
-  "chromeWebSecurity": false,
-  "videoUploadOnPasses": false,
-  "video": true,
-  "pageLoadTimeout": 100000,
-  "projectId": "u1ugb5"
-}

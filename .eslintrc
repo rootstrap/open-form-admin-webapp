@@ -10,7 +10,6 @@
   "plugins": [
     "react",
     "react-hooks",
-    "cypress",
     "prettier"
   ],
   "parser": "babel-eslint",
@@ -27,8 +26,7 @@
     "browser": true,
     "node": true,
     "jquery": true,
-    "jest": true,
-    "cypress/globals": true
+    "jest": true
   },
   "rules": {
     "prettier/prettier": ["error"],
