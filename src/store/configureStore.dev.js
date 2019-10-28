@@ -7,9 +7,7 @@ import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import { persistStore } from 'redux-persist';
 import _ from 'lodash';
-import { routerMiddleware } from 'connected-react-router';
 
-import history from 'utils/history';
 import rootReducer from 'reducers';
 
 export default function configureStore(initialState) {
@@ -19,10 +17,10 @@ export default function configureStore(initialState) {
       !_.startsWith(type, '@@router') && !_.startsWith(type, '@@redux-form')
   });
 
-  const middewares = [thunkMiddleware, logger, routerMiddleware(history)];
+  const middewares = [thunkMiddleware, logger];
 
   const store = createStore(
-    rootReducer(history),
+    rootReducer,
     initialState,
     compose(
       applyMiddleware(...middewares),
