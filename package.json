@@ -19,14 +19,9 @@
     "remove-dist": "rimraf ./dist",
     "prebuild": "npm-run-all clean-dist lint test",
     "build": "babel-node tools/build.js",
-    "test": "run-p -r start cypress-run",
-    "cypress-run": "cypress run",
-    "test:open": "cypress open",
-    "test:ci": "cypress run --key e83e86fd-9c47-4b2b-980d-517c9aff5974",
-    "test:spec": "cypress run --spec",
+    "test": "jest",
     "rm:coverage": "rm -rf coverage || true",
     "check:coverage": "nyc report --reporter=text-summary --reporter=lcov --check-coverage",
-    "jest": "jest",
     "jest:cover": "yarn jest -- --coverage",
     "jest:watch": "yarn jest -- --watch",
     "deploy": "yarn build && babel-node tools/deployS3",
@@ -39,10 +34,7 @@
     }
   },
   "nyc": {
-    "lines": 70,
-    "exclude": [
-      "cypress"
-    ]
+    "lines": 70
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json}": [
@@ -109,8 +101,6 @@
     "@babel/preset-env": "7.4.5",
     "@babel/preset-react": "7.0.0",
     "@babel/register": "7.4.4",
-    "@cypress/code-coverage": "1.8.0",
-    "@cypress/webpack-preprocessor": "4.0.3",
     "@svgr/webpack": "4.3.2",
     "assets-webpack-plugin": "3.9.5",
     "autoprefixer": "9.1.1",
@@ -127,8 +117,6 @@
     "connect-history-api-fallback": "1.5.0",
     "core-js": "3.0.1",
     "css-loader": "1.0.0",
-    "cypress": "3.4.1",
-    "cypress-image-snapshot": "3.1.1",
     "dotenv": "8.1.0",
     "dotenv-webpack": "1.7.0",
     "enzyme": "3.4.1",
@@ -136,7 +124,6 @@
     "eslint": "6.1.0",
     "eslint-config-airbnb": "18.0.1",
     "eslint-config-prettier": "6.0.0",
-    "eslint-plugin-cypress": "2.7.0",
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-react": "7.14.3",
@@ -184,9 +171,6 @@
     "transform": {
       "^.+\\.jsx?$": "babel-jest"
     },
-    "modulePathIgnorePatterns": [
-      "<rootDir>/cypress"
-    ],
     "coverageDirectory": "coverage_jest"
   },
   "keywords": [

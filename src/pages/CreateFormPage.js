@@ -30,7 +30,7 @@ const CreateFormPage = () => {
       </Header>
       <Formik initialValues={{ category: '' }} onSubmit={handleSubmit}>
         <Form>
-          <TextInput name="name" label="Form's name" />
+          <TextInput name="name" label="Name" />
           <Select name="category" label="Category">
             {formCategories.map(({ id, name }) => (
               <option key={id} value={id}>

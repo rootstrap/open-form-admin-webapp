@@ -49,11 +49,6 @@ const messages = locales[locale];
 
 const { persistor, store } = configureStore();
 
-// Expose store when run in Cypress
-if (window.Cypress) {
-  window.store = store;
-}
-
 const renderApp = Component => {
   render(
     <IntlProvider locale={locale} messages={messages} defaultLocale="en">

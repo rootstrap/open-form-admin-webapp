@@ -16,10 +16,6 @@ module.exports = {
     selectors: path.resolve(__dirname, '../../src/selectors'),
     store: path.resolve(__dirname, '../../src/store'),
     styles: path.resolve(__dirname, '../../src/styles'),
-    utils: path.resolve(__dirname, '../../src/utils'),
-    fixtures: path.resolve(__dirname, '../../cypress/fixtures'),
-    stubs: path.resolve(__dirname, '../../cypress/stubs'),
-    cypressConstants: path.resolve(__dirname, '../../cypress/support/constants'),
-    reusableTests: path.resolve(__dirname, '../../cypress/support/reusableTests')
+    utils: path.resolve(__dirname, '../../src/utils')
   }
 };

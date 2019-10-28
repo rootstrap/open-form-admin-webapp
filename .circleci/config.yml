@@ -1,14 +1,10 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: cypress/base:10.16.0
-    environment:
-      CC_TEST_REPORTER_ID: ca4447b67e8c7cbd304c6a31bd36137e5bc24d5355f51a96281434f9ae479fb9
     steps:
       - checkout
       - restore_cache:
-          name: Restore yarn and Cypress cache
+          name: Restore yarn cache
           keys:
             - dependency-cache-{{ checksum "yarn.lock" }}
       - run:
@@ -16,7 +12,7 @@ jobs:
           command: yarn --frozen-lockfile
       - run:
           name: Run server
-          command: ENV=cypress yarn start
+          command: yarn start
           background: true
       - run:
           name: Run tests
