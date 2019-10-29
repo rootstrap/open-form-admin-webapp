@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 
 import RouteFromPath from 'components/routes/RouteFromPath';
@@ -19,9 +18,6 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
-        <Helmet>
-          <title>Open form webapp</title>
-        </Helmet>
         <Router>
           <Switch>
             {routes.map(route => (
