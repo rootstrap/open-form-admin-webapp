@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c1 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border-width: 0;
+  margin: 0.1em 0;
+  padding: 0.5em 0.7em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 40px;
+  font-size: 0.9em;
+  background-color: #f2f2f2;
+  border-radius: 2px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+
+.c2 {
+  position: absolute;
+  right: 0.7em;
+}
+
+<div
+  className="c0"
+>
+  <select
+    className="c1"
+  >
+    <option
+      value="test"
+    >
+      test
+    </option>
+  </select>
+  <svg
+    className="c2"
+    fill="none"
+    height="8"
+    viewBox="0 0 15 8"
+    width="15"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M1.48242 1L7.48242 7L13.4824 1"
+      stroke="#4F4F4F"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+    />
+  </svg>
+</div>
+`;

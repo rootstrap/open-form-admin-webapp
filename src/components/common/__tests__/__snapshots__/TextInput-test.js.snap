@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  border-width: 0;
+  margin: 0.1em 0;
+  padding: 0.5em 0.7em;
+  height: 40px;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  border-radius: 2px;
+}
+
+<input
+  className="c0"
+/>
+`;

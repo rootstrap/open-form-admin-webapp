@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 
 import DropdownArrow from 'components/common/DropdownArrow';
@@ -12,7 +12,7 @@ const StyledSelect = styled.select`
   appearance: none;
   height: 40px;
   font-size: 0.9em;
-  ${({ theme }) => `
+  ${({ theme }) => css`
     background-color: ${theme.background.input};
     border-radius: ${theme.border.radius};
   `}
