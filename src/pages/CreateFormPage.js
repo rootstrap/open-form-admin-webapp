@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { Formik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -10,10 +10,6 @@ import Button from 'components/common/Button';
 import Header from 'components/common/Header';
 import Title from 'components/common/Title';
 import Form from 'components/common/Form';
-
-function handleSubmit(values) {
-  alert(JSON.stringify(values));
-}
 
 const CreateFormPage = () => {
   const formCategories = useSelector(getFormCategories);
@@ -28,7 +24,10 @@ const CreateFormPage = () => {
       <Header>
         <Title>Create new form</Title>
       </Header>
-      <Formik initialValues={{ name: '', category: '' }} onSubmit={handleSubmit}>
+      <Formik
+        initialValues={{ name: '', category: '' }}
+        onSubmit={useCallback(values => alert(JSON.stringify(values)), [])}
+      >
         <Form>
           <TextInput name="name" label="Name" />
           <Select name="category" label="Category">

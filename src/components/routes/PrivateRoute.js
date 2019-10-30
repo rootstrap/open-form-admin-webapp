@@ -6,7 +6,7 @@ import { FormattedMessage } from 'react-intl';
 import routes from 'constants/routesPaths';
 import { useSession } from 'hooks';
 
-const PrivateRoute = ({ children, exact = false, path, hideMenu }) => {
+const PrivateRoute = ({ children, exact = false, path, hideMenu = false }) => {
   const location = useLocation();
   const { authenticated } = useSession();
 

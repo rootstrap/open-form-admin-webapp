@@ -11,7 +11,7 @@ export const parseInputErrors = error => {
 };
 
 export const applyQueryParams = (url, params = {}) => {
-  if (Object.keys(params).length <= 0) {
+  if (!Object.keys(params).length) {
     return url;
   }
   const queryParams = queryString.stringify(params);
