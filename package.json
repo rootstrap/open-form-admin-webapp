@@ -48,7 +48,7 @@
   "dependencies": {
     "@formatjs/intl-relativetimeformat": "2.6.3",
     "eslint-plugin-prettier": "3.1.0",
-    "formik": "2.0.1",
+    "formik": "2.0.3",
     "humps": "2.0.1",
     "immer": "3.2.0",
     "intl": "1.2.5",
@@ -161,7 +161,20 @@
     "transform": {
       "^.+\\.jsx?$": "babel-jest"
     },
-    "coverageDirectory": "coverage_jest"
+    "coverageDirectory": "coverage_jest",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/components/common/**",
+      "!src/**/*.snap"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    }
   },
   "keywords": [
     "react",

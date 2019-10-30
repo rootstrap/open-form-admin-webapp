@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export default styled.button`
   box-shadow: 0px 3px 6px rgba(48, 83, 115, 0.09893);
@@ -7,7 +7,7 @@ export default styled.button`
   margin: 1em;
   border-width: 0;
   font-size: 0.9em;
-  ${({ theme }) => `
+  ${({ theme }) => css`
     background-color: ${theme.color.primary};
     border-radius: ${theme.border.radius};
   `};

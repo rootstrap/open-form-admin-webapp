@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export default styled.input`
   border-width: 0;
@@ -6,7 +6,7 @@ export default styled.input`
   padding: 0.5em 0.7em;
   height: 40px;
   box-sizing: border-box;
-  ${({ theme }) => `
+  ${({ theme }) => css`
     background-color: ${theme.background.input};
     border-radius: ${theme.border.radius};
   `}

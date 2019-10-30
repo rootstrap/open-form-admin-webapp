@@ -8,8 +8,8 @@ exports[`renders correctly 1`] = `
   margin: 1em;
   border-width: 0;
   font-size: 0.9em;
-  background-color: blue;
-  border-radius: 1px;
+  background-color: #56ccf2;
+  border-radius: 2px;
 }
 
 <button

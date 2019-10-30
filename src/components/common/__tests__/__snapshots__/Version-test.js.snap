@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  -webkit-letter-spacing: -0.3px;
+  -moz-letter-spacing: -0.3px;
+  -ms-letter-spacing: -0.3px;
+  letter-spacing: -0.3px;
+  font-weight: bold;
+  font-size: 0.9em;
+  margin-bottom: 0.5em;
+  color: #56ccf2;
+}
+
+<div
+  className="c0"
+/>
+`;
