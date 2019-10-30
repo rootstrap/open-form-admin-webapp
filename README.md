@@ -78,12 +78,12 @@ The server is prepared to fetch data directly from the backend before rendering 
 | [Express](https://github.com/expressjs/express) | Fast, unopinionated, minimalist web framework for node. |
 | [Jest](https://facebook.github.io/jest/) | Automated tests with built-in expect assertions and [Test Renderer](https://reactjs.org/docs/test-renderer.html) that can be used to render React components to pure JavaScript objects, without depending on the DOM or a native mobile environment. |
 | [ESLint](http://eslint.org/)| Lint JS. Reports syntax and style issues. Using [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb) for the airbnb style guides. |
-| [PostCSS](https://github.com/postcss/postcss) | Transform styles with JS plugins. Used to autoprefix CSS |
 | [Redux Persist](https://github.com/rt2zz/redux-persist) | Persist and rehydrate your redux store |
-| [ReduxForm](http://redux-form.com/6.4.3/) | Redux-form works with React Redux to enable an html form in React to use Redux to store all of its state. |
+| [Formik](https://jaredpalmer.com/formik/) | Build forms in React, without the tears. |
 | [Isomorphic Fetch](https://github.com/matthew-andrews/isomorphic-fetch) |  Is a Promise-based mechanism for programatically making web requests in the browser. |
 | [Immer](https://github.com/immerjs/immer) | Allows you to work with immutable state in a more convenient way. |
 | [React Intl](https://github.com/yahoo/react-intl/) | Localization for language support. |
+| [styled components](https://www.styled-components.com/) | Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress. |
 
 ## License
 
