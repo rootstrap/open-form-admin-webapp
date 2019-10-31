@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
-import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 
 import RouteFromPath from 'components/routes/RouteFromPath';
 import routes from '../routes';
@@ -13,10 +13,15 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const AppWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <>
+      <AppWrapper>
         <GlobalStyle />
         <Router>
           <Switch>
@@ -25,7 +30,7 @@ const App = () => {
             ))}
           </Switch>
         </Router>
-      </>
+      </AppWrapper>
     </ThemeProvider>
   );
 };

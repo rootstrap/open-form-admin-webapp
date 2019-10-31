@@ -5,8 +5,10 @@ export default styled.button`
   color: #fff;
   padding: 0.7em 0.9em;
   margin: 1em;
+  margin-right: 0;
   border-width: 0;
   font-size: 0.9em;
+  align-self: flex-end;
   ${({ theme }) => css`
     background-color: ${theme.color.primary};
     border-radius: ${theme.border.radius};

@@ -9,7 +9,6 @@ exports[`renders correctly 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 60%;
   margin: 0.2em 0;
 }
 
