@@ -1,6 +1,7 @@
 import React, { useEffect, useCallback } from 'react';
 import { Formik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
+import * as Yup from 'yup';
 
 import { fetchFormCategories } from 'actions/formActions';
 import { getFormCategories } from 'selectors/formSelectors';
@@ -26,19 +27,26 @@ const CreateFormPage = () => {
       </Header>
       <Formik
         initialValues={{ name: '', category: '' }}
+        validationSchema={Yup.object().shape({
+          name: Yup.string().required('Required')
+        })}
         onSubmit={useCallback(values => alert(JSON.stringify(values)), [])}
       >
-        <Form>
-          <TextInput name="name" label="Name" />
-          <Select name="category" label="Category">
-            {formCategories.map(({ id, name }) => (
-              <option key={id} value={id}>
-                {name}
-              </option>
-            ))}
-          </Select>
-          <Button type="submit">Submit</Button>
-        </Form>
+        {({ isSubmitting }) => (
+          <Form>
+            <TextInput name="name" label="Name" />
+            <Select name="category" label="Category">
+              {formCategories.map(({ id, name }) => (
+                <option key={id} value={id}>
+                  {name}
+                </option>
+              ))}
+            </Select>
+            <Button type="submit" disabled={isSubmitting}>
+              Submit
+            </Button>
+          </Form>
+        )}
       </Formik>
     </>
   );
