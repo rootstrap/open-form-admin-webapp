@@ -4,7 +4,10 @@ import createAction from 'actions/createAction';
 import {
   FETCH_FORM_CATEGORIES,
   FETCH_FORM_CATEGORIES_SUCCESS,
-  FETCH_FORM_CATEGORIES_ERROR
+  FETCH_FORM_CATEGORIES_ERROR,
+  CREATE_FORM,
+  CREATE_FORM_SUCCESS,
+  CREATE_FORM_ERROR
 } from 'actions/actionTypes';
 
 const fetchFormCategoriesRequest = createAction(FETCH_FORM_CATEGORIES);
@@ -18,5 +21,20 @@ export const fetchFormCategories = () =>
       dispatch(fetchFormCategoriesRequest());
       const { data } = await formServices.fetchFormCategories();
       dispatch(fetchFormCategoriesSuccess(data));
+    }
+  );
+
+const createFormRequest = createAction(CREATE_FORM);
+const createFormSuccess = createAction(CREATE_FORM_SUCCESS);
+const createFormError = createAction(CREATE_FORM_ERROR);
+
+export const createForm = (values, history) =>
+  swallow(
+    (error, dispatch) => dispatch(createFormError(error)),
+    async dispatch => {
+      dispatch(createFormRequest());
+      const { data } = await formServices.createForm(values);
+      dispatch(createFormSuccess(data));
+      history.push('/forms');
     }
   );
