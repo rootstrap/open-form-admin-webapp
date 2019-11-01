@@ -7,7 +7,10 @@ import {
   FETCH_FORM_CATEGORIES_ERROR,
   CREATE_FORM,
   CREATE_FORM_SUCCESS,
-  CREATE_FORM_ERROR
+  CREATE_FORM_ERROR,
+  FETCH_FORMS,
+  FETCH_FORMS_SUCCESS,
+  FETCH_FORMS_ERROR
 } from 'actions/actionTypes';
 import routesPaths from 'constants/routesPaths';
 
@@ -37,5 +40,19 @@ export const createForm = (values, history) =>
       const { data } = await formServices.createForm(values);
       dispatch(createFormSuccess(data));
       history.push(routesPaths.forms);
+    }
+  );
+
+const fetchFormsRequest = createAction(FETCH_FORMS);
+const fetchFormsSuccess = createAction(FETCH_FORMS_SUCCESS);
+const fetchFormsError = createAction(FETCH_FORMS_ERROR);
+
+export const fetchForms = category =>
+  swallow(
+    (error, dispatch) => dispatch(fetchFormsError(error)),
+    async dispatch => {
+      dispatch(fetchFormsRequest());
+      const { data } = await formServices.fetchForms(category);
+      dispatch(fetchFormsSuccess({ ...data, category }));
     }
   );

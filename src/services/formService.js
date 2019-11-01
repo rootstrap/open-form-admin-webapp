@@ -10,6 +10,10 @@ class FormService {
       name
     });
   }
+
+  static fetchForms(category) {
+    return api.get(`form_categories/${category}/forms`);
+  }
 }
 
 export default FormService;
