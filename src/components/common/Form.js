@@ -4,7 +4,7 @@ import { Form } from 'formik';
 export const formStyles = css`
   display: flex;
   flex-direction: column;
-  margin: 1em 0;
+  margin: 1rem 0;
   width: 50%;
   align-self: center;
   max-width: 730px;
