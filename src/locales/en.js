@@ -23,7 +23,9 @@ export default {
   'passwordConfirmation.presence': 'You must enter a password confirmation to continue',
   'passwordConfirmation.equality': 'Your password confirmation must be equal to the password',
 
+  'nav.home': 'Home',
   'nav.create-form': 'Create form',
+  'nav.forms': 'Forms',
 
   'create-form-page.name.label': 'Name',
   'create-form-page.name.empty': 'Required',

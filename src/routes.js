@@ -5,6 +5,7 @@ import HomePage from 'pages/HomePage';
 import LoginPage from 'pages/LoginPage';
 import SignUpPage from 'pages/SignUpPage';
 import CreateFormPage from 'pages/CreateFormPage';
+import Forms from 'pages/Forms';
 import NotFoundPage from 'pages/NotFoundPage';
 
 const routes = [
@@ -25,8 +26,12 @@ const routes = [
   {
     path: routesPaths.createForm,
     component: <CreateFormPage />,
-    private: true,
-    hideMenu: true
+    private: true
+  },
+  {
+    path: routesPaths.forms,
+    component: <Forms />,
+    private: true
   },
   {
     component: <NotFoundPage />
