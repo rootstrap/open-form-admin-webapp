@@ -7,6 +7,7 @@ export const formStyles = css`
   margin: 1em 0;
   width: 50%;
   align-self: center;
+  max-width: 730px;
 `;
 
 export default styled(Form)`
