@@ -32,7 +32,8 @@ class ApiService {
   }
 
   post(uri, data) {
-    const requestData = this.buildRequestData(HTTP_VERB.POST, data);
+    // adding version to every post as is a requirement from the api
+    const requestData = this.buildRequestData(HTTP_VERB.POST, { version: 1, ...data });
     return this.performRequest(uri, requestData);
   }
 

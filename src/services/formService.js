@@ -7,8 +7,7 @@ class FormService {
 
   static createForm({ name, category }) {
     return api.post(`/admin/form_categories/${category}/forms`, {
-      name,
-      version: 1
+      name
     });
   }
 }

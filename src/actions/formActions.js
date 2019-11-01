@@ -9,6 +9,7 @@ import {
   CREATE_FORM_SUCCESS,
   CREATE_FORM_ERROR
 } from 'actions/actionTypes';
+import routesPaths from 'constants/routesPaths';
 
 const fetchFormCategoriesRequest = createAction(FETCH_FORM_CATEGORIES);
 const fetchFormCategoriesSuccess = createAction(FETCH_FORM_CATEGORIES_SUCCESS);
@@ -35,6 +36,6 @@ export const createForm = (values, history) =>
       dispatch(createFormRequest());
       const { data } = await formServices.createForm(values);
       dispatch(createFormSuccess(data));
-      history.push('/forms');
+      history.push(routesPaths.forms);
     }
   );

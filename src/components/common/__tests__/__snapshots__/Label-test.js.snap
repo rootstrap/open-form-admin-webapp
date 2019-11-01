@@ -3,7 +3,7 @@
 exports[`renders correctly 1`] = `
 .c0 {
   color: #4f4f4f;
-  margin: 0.1em 0;
+  margin: 0.1rem 0;
 }
 
 <label
