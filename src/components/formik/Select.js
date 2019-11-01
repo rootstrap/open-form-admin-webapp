@@ -6,20 +6,23 @@ import Select from 'components/common/Select';
 import FormGroup from 'components/common/FormGroup';
 import Label from 'components/common/Label';
 
-const FormikSelect = ({ name, label, children }) => {
+const FormikSelect = ({ name, label, ...props }) => {
   const [field] = useField(name);
   return (
     <FormGroup>
       <Label htmlFor={name}>{label}</Label>
-      <Select {...field}>{children}</Select>
+      <Select
+        {...props}
+        {...field}
+        onChange={({ value }) => field.onChange({ target: { value, name } })}
+      />
     </FormGroup>
   );
 };
 
 FormikSelect.propTypes = {
   name: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired
+  label: PropTypes.string.isRequired
 };
 
 export default FormikSelect;

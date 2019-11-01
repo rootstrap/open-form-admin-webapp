@@ -44,13 +44,8 @@ const CreateFormPage = () => {
             <Select
               name="category"
               label={<FormattedMessage id="create-form-page.category.label" />}
-            >
-              {formCategories.map(({ id, name }) => (
-                <option key={id} value={id}>
-                  {name}
-                </option>
-              ))}
-            </Select>
+              options={formCategories.map(({ id, name }) => ({ value: id, label: name }))}
+            />
             <Button type="submit" disabled={isSubmitting}>
               <FormattedMessage id="create-form-page.submit" />
             </Button>
