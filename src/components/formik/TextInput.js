@@ -20,7 +20,7 @@ const FormikTextInput = ({ name, label, type }) => {
 
 FormikTextInput.propTypes = {
   name: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   type: PropTypes.string
 };
 

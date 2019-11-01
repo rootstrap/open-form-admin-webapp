@@ -21,14 +21,10 @@ const StyledSelect = styled.div`
   `}
 `;
 
-const Wrapper = styled.button`
+const Wrapper = styled.div`
   display: flex;
   align-items: center;
   position: relative;
-  appearance: none;
-  border: 0;
-  padding: 0;
-  outline: none;
   height: 40px;
 `;
 
@@ -41,14 +37,14 @@ const OptionsWrapper = styled.div`
   position: absolute;
   top: 50px;
   left: 0;
-  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
   width: 100%;
   max-height: 160px;
   overflow-y: scroll;
-  ${({ theme }) => css`
+  ${({ theme, isOpen }) => css`
     background-color: ${theme.background.input};
     border-radius: ${theme.border.radius};
     border: 1px solid ${theme.background.input};
+    display: ${isOpen ? 'block' : 'none'};
   `}
 `;
 
@@ -77,7 +73,7 @@ const Select = ({ options = [], onChange, value }) => {
   const optionsWrapperRef = useRef(null);
   useOutsideAlerter(optionsWrapperRef, () => isOpen && setOpen(false));
   return (
-    <Wrapper type="button" onClick={() => setOpen(!isOpen)}>
+    <Wrapper onClick={() => setOpen(!isOpen)}>
       <StyledSelect>
         {selectedValue.label}
         <OptionsWrapper isOpen={isOpen} ref={optionsWrapperRef}>

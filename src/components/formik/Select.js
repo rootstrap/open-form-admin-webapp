@@ -22,7 +22,7 @@ const FormikSelect = ({ name, label, ...props }) => {
 
 FormikSelect.propTypes = {
   name: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired
 };
 
 export default FormikSelect;
