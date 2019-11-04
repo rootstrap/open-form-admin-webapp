@@ -29,12 +29,24 @@ export default {
   'passwordConfirmation.presence': 'Debe confirmar su contraseña para continuar',
   'passwordConfirmation.equality': 'Su confirmación de contraseña debe ser igual a la contraseña',
 
-  'nav.home': 'Inicio',
-  'nav.create-form': 'Crear formulario',
-  'nav.forms': 'Formularios',
+  nav: {
+    home: 'Inicio',
+    'create-form': 'Crear formulario',
+    forms: 'Formularios'
+  },
 
-  'create-form-page.name.label': 'Nombre',
-  'create-form-page.name.empty': 'Requerido',
-  'create-form-page.category.label': 'Categoría',
-  'create-form-page.submit': 'Enviar'
+  'create-form-page': {
+    name: {
+      label: 'Nombre',
+      empty: 'Requerido'
+    },
+    category: {
+      label: 'Categoría'
+    },
+    submit: 'Enviar'
+  },
+
+  forms: {
+    category: 'Categoría'
+  }
 };
