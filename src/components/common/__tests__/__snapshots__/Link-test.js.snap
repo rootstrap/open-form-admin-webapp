@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0.1em 0.2em;
+  color: #56ccf2;
+}
+
+<a
+  className="c0"
+  to="/route1"
+>
+  route 1
+</a>
+`;

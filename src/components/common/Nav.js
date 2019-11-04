@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+
 import Logo from 'components/common/Logo';
 import DropdownArrow from 'components/common/DropdownArrow';
+import List from 'components/common/List';
 
 const StyledNav = styled.nav`
   display: flex;
@@ -16,16 +18,13 @@ const StyledNav = styled.nav`
   }
 `;
 
-const List = styled.ul`
-  display: flex;
+const NavList = styled(List)`
+  flex-direction: row;
   align-items: center;
-  list-style: none;
-  margin: 0 0.75em;
-  padding: 0;
 
   & > li {
     display: inline-block;
-    margin: 0 1em;
+    margin: 0 1rem;
   }
 
   @media (max-width: 50em) {
@@ -46,7 +45,7 @@ const OpenMenuIcon = styled(DropdownArrow)`
 const Nav = ({ children }) => (
   <StyledNav>
     <Logo />
-    <List>{children}</List>
+    <NavList>{children}</NavList>
     <OpenMenuIcon />
   </StyledNav>
 );

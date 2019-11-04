@@ -7,6 +7,7 @@ import routes from 'constants/routesPaths';
 import { useSession } from 'hooks';
 import Nav from 'components/common/Nav';
 import NavLink from 'components/common/NavLink';
+import ListItem from 'components/common/ListItem';
 
 const PrivateRoute = ({ children, exact = false, path }) => {
   const location = useLocation();
@@ -15,23 +16,22 @@ const PrivateRoute = ({ children, exact = false, path }) => {
   return authenticated ? (
     <Route exact={exact} path={path}>
       <Nav>
-        <li>
+        <ListItem>
           <NavLink to={routes.index} exact>
             <FormattedMessage id="nav.home" />
           </NavLink>
-        </li>
-        <li>
+        </ListItem>
+        <ListItem>
           <NavLink to={routes.forms}>
             <FormattedMessage id="nav.forms" />
           </NavLink>
-        </li>
-        <li>
+        </ListItem>
+        <ListItem>
           <NavLink to={routes.createForm}>
             <FormattedMessage id="nav.create-form" />
           </NavLink>
-        </li>
+        </ListItem>
       </Nav>
-
       {children}
     </Route>
   ) : (
