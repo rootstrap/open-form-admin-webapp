@@ -25,7 +25,7 @@ export default {
 
   nav: {
     home: 'Home',
-    'create-form': 'Create form',
+    'create-form': 'Add form',
     forms: 'Forms'
   },
 

@@ -7,7 +7,7 @@ export default styled.input`
   height: 40px;
   box-sizing: border-box;
   ${({ theme }) => css`
-    background-color: ${theme.background.input};
+    background-color: ${theme.background.primary};
     border-radius: ${theme.border.radius};
   `}
 `;
