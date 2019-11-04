@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  -webkit-animation: iVXCSc 2s linear infinite;
+  animation: iVXCSc 2s linear infinite;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  border: 0.5em solid;
+  border-top: 0.5em solid #56ccf2;
+}
+
+<div
+  className="c0"
+/>
+`;

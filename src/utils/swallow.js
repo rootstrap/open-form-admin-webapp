@@ -1,6 +1,6 @@
-const swallow = (fail, fn) => (...args) => {
+const swallow = (fail, fn) => async (...args) => {
   try {
-    return fn(...args);
+    return await fn(...args);
   } catch (error) {
     return fail(error, ...args);
   }
