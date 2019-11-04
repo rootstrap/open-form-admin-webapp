@@ -2,16 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
+import routes from 'constants/routesPaths';
 import Logo from 'components/common/Logo';
 import DropdownArrow from 'components/common/DropdownArrow';
 import List from 'components/common/List';
+import Link from 'components/common/Link';
 
 const StyledNav = styled.nav`
   display: flex;
   align-items: center;
-  height: 3rem;
-  padding: 0 1.5em;
-  background: ${({ theme }) => theme.background.input};
+  padding: 1rem 1.5rem;
+  background: ${({ theme }) => theme.background.primary};
 
   @media (max-width: 50em) {
     justify-content: space-between;
@@ -44,7 +45,9 @@ const OpenMenuIcon = styled(DropdownArrow)`
 
 const Nav = ({ children }) => (
   <StyledNav>
-    <Logo />
+    <Link to={routes.index}>
+      <Logo />
+    </Link>
     <NavList>{children}</NavList>
     <OpenMenuIcon />
   </StyledNav>

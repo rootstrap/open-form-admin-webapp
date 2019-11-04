@@ -3,11 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 
+import routes from 'constants/routesPaths';
 import { getFormCategories, getFormsCategoriesByCategory } from 'selectors/formSelectors';
 import { fetchFormCategories, fetchForms } from 'actions/formActions';
 import Header from 'components/common/Header';
 import Title from 'components/common/Title';
 import Subtitle from 'components/common/Subtitle';
+import Link from 'components/common/Link';
 import FormsList from 'components/forms/FormsList';
 import FormsListItem from 'components/forms/FormsListItem';
 
@@ -41,6 +43,9 @@ const Forms = () => {
         <Title>
           <FormattedMessage id="nav.forms" />
         </Title>
+        <Link to={routes.createForm}>
+          + <FormattedMessage id="nav.create-form" />
+        </Link>
       </Header>
       <ListWrapper>
         {formCategories.map(

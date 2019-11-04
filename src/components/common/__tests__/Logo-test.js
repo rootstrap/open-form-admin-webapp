@@ -1,9 +1,9 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 
-import FormGroup from '../FormGroup';
+import Logo from '../Logo';
 
 it('renders correctly', () => {
-  const testRenderer = TestRenderer.create(<FormGroup>field</FormGroup>);
+  const testRenderer = TestRenderer.create(<Logo />);
   expect(testRenderer.toJSON()).toMatchSnapshot();
 });

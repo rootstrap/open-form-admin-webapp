@@ -29,7 +29,7 @@ const StyledSelect = styled.div`
   display: flex;
   align-items: center;
   ${({ theme }) => css`
-    background-color: ${theme.background.input};
+    background-color: ${theme.background.primary};
     border-radius: ${theme.border.radius};
   `}
 `;
@@ -42,9 +42,9 @@ const OptionsWrapper = styled.div`
   max-height: 160px;
   overflow-y: scroll;
   ${({ theme, isOpen }) => css`
-    background-color: ${theme.background.input};
+    background-color: ${theme.background.primary};
     border-radius: ${theme.border.radius};
-    border: 1px solid ${theme.background.input};
+    border: 1px solid ${theme.background.primary};
     display: ${isOpen ? 'block' : 'none'};
   `}
 `;

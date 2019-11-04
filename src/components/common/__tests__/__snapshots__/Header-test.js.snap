@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-.c1 {
+.c2 {
   -webkit-letter-spacing: -0.3px;
   -moz-letter-spacing: -0.3px;
   -ms-letter-spacing: -0.3px;
@@ -10,6 +10,24 @@ exports[`renders correctly 1`] = `
   font-size: 0.9em;
   margin-bottom: 0.5rem;
   color: #56ccf2;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c0 {
@@ -25,13 +43,23 @@ exports[`renders correctly 1`] = `
   border-bottom: 1px solid #56ccf2;
 }
 
+.c0 > div {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
 <header
   className="c0"
 >
   <div>
-    important text
     <div
       className="c1"
+    >
+      important text
+    </div>
+    <div
+      className="c2"
     >
       ID:1 - Version 1
     </div>

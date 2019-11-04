@@ -1,6 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
+.c1 {
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0.1em 0.2em;
+  color: #56ccf2;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -10,12 +18,11 @@ exports[`renders correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  height: 3rem;
-  padding: 0 1.5em;
+  padding: 1rem 1.5rem;
   background: #f2f2f2;
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -35,12 +42,12 @@ exports[`renders correctly 1`] = `
   align-items: center;
 }
 
-.c1 > li {
+.c2 > li {
   display: inline-block;
   margin: 0 1rem;
 }
 
-.c2 {
+.c3 {
   display: none;
   height: 1.5rem;
   width: 1.5rem;
@@ -56,13 +63,13 @@ exports[`renders correctly 1`] = `
 }
 
 @media (max-width:50em) {
-  .c1 {
+  .c2 {
     display: none;
   }
 }
 
 @media (max-width:50em) {
-  .c2 {
+  .c3 {
     display: block;
   }
 }
@@ -70,25 +77,31 @@ exports[`renders correctly 1`] = `
 <nav
   className="c0"
 >
-  <svg
-    fill="none"
-    height="21"
-    viewBox="0 0 51 21"
-    width="51"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M47.111 0L30.483 15.9948C27.8207 9.20742 20.5304 5.18777 13.0963 6.40841C5.66223 7.62905 0.170853 13.7474 0 21H5.50501C5.69649 15.8218 10.021 11.669 15.4045 11.4937C20.788 11.3183 25.3946 15.1802 25.9498 20.3341L25.8961 20.3964C25.9831 20.6279 25.9998 20.8219 26.0053 21H32.9745L51 3.70002L47.111 0Z"
-      fill="#161631"
-    />
-  </svg>
-  <ul
+  <a
     className="c1"
+    href="/"
+    onClick={[Function]}
+  >
+    <svg
+      fill="none"
+      height="21"
+      viewBox="0 0 51 21"
+      width="51"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M47.111 0L30.483 15.9948C27.8207 9.20742 20.5304 5.18777 13.0963 6.40841C5.66223 7.62905 0.170853 13.7474 0 21H5.50501C5.69649 15.8218 10.021 11.669 15.4045 11.4937C20.788 11.3183 25.3946 15.1802 25.9498 20.3341L25.8961 20.3964C25.9831 20.6279 25.9998 20.8219 26.0053 21H32.9745L51 3.70002L47.111 0Z"
+        fill="#161631"
+      />
+    </svg>
+  </a>
+  <ul
+    className="c2"
   >
     navigation
   </ul>
   <svg
-    className="c2"
+    className="c3"
     fill="none"
     height="8"
     viewBox="0 0 15 8"

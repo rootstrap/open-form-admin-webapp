@@ -12,7 +12,7 @@ const Option = styled.button`
   padding: 0 0.7rem;
   outline: none;
   ${({ theme }) => css`
-    background-color: ${theme.background.input};
+    background-color: ${theme.background.primary};
     border-radius: ${theme.border.radius};
     &:hover {
       color: white;

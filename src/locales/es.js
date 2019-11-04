@@ -31,7 +31,7 @@ export default {
 
   nav: {
     home: 'Inicio',
-    'create-form': 'Crear formulario',
+    'create-form': 'Agregar formulario',
     forms: 'Formularios'
   },
 

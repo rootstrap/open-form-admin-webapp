@@ -17,18 +17,8 @@ const PrivateRoute = ({ children, exact = false, path }) => {
     <Route exact={exact} path={path}>
       <Nav>
         <ListItem>
-          <NavLink to={routes.index} exact>
-            <FormattedMessage id="nav.home" />
-          </NavLink>
-        </ListItem>
-        <ListItem>
           <NavLink to={routes.forms}>
             <FormattedMessage id="nav.forms" />
-          </NavLink>
-        </ListItem>
-        <ListItem>
-          <NavLink to={routes.createForm}>
-            <FormattedMessage id="nav.create-form" />
           </NavLink>
         </ListItem>
       </Nav>
