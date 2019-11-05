@@ -1,7 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 
+import mobile from 'utils/styles/mobile';
 import routes from 'constants/routesPaths';
 import Logo from 'components/common/Logo';
 import DropdownArrow from 'components/common/DropdownArrow';
@@ -11,12 +12,16 @@ import Link from 'components/common/Link';
 const StyledNav = styled.nav`
   display: flex;
   align-items: center;
-  padding: 1rem 1.5rem;
   background: ${({ theme }) => theme.background.primary};
+  height: 3rem;
 
-  @media (max-width: 50em) {
+  ${mobile(css`
     justify-content: space-between;
-  }
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+  `)}
 `;
 
 const NavList = styled(List)`
@@ -28,26 +33,31 @@ const NavList = styled(List)`
     margin: 0 1rem;
   }
 
-  @media (max-width: 50em) {
+  ${mobile(css`
     display: none;
-  }
+  `)}
 `;
 
 const OpenMenuIcon = styled(DropdownArrow)`
   display: none;
   height: 1.5rem;
   width: 1.5rem;
+  padding-right: 1rem;
 
-  @media (max-width: 50em) {
+  ${mobile(css`
     display: block;
-  }
+  `)}
+`;
+
+const LogoLink = styled(Link)`
+  padding-left: 1rem;
 `;
 
 const Nav = ({ children }) => (
   <StyledNav>
-    <Link to={routes.index}>
+    <LogoLink to={routes.index}>
       <Logo />
-    </Link>
+    </LogoLink>
     <NavList>{children}</NavList>
     <OpenMenuIcon />
   </StyledNav>

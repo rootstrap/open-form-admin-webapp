@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
-import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
+import styled, { ThemeProvider, createGlobalStyle, css } from 'styled-components';
 
 import RouteFromPath from 'components/routes/RouteFromPath';
+import mobile from 'utils/styles/mobile';
 import routes from '../routes';
 import theme from '../constants/theme';
 
@@ -16,6 +17,10 @@ const GlobalStyle = createGlobalStyle`
 const AppWrapper = styled.div`
   display: flex;
   flex-direction: column;
+
+  ${mobile(css`
+    padding-top: 3rem;
+  `)}
 `;
 
 const App = () => {
