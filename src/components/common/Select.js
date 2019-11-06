@@ -1,10 +1,12 @@
 import React, { useState, useRef, useCallback } from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
+import { CSSTransition } from 'react-transition-group';
 
 import useOutsideAlerter from 'hooks/useOutsideAlerter';
 import DropdownArrow from 'components/common/DropdownArrow';
 import SelectOption from 'components/common/SelectOption';
+import { transitionHeight } from 'utils/styles/transition';
 
 const StyledDropdownArrow = styled(DropdownArrow)`
   position: absolute;
@@ -28,6 +30,7 @@ const StyledSelect = styled.div`
   box-sizing: border-box;
   display: flex;
   align-items: center;
+
   ${({ theme }) => css`
     background-color: ${theme.background.primary};
     border-radius: ${theme.border.radius};
@@ -39,13 +42,13 @@ const OptionsWrapper = styled.div`
   top: 50px;
   left: 0;
   width: 100%;
-  max-height: 160px;
   overflow-y: scroll;
-  ${({ theme, isOpen }) => css`
+  ${transitionHeight('160px', '250ms')}
+
+  ${({ theme }) => css`
     background-color: ${theme.background.primary};
     border-radius: ${theme.border.radius};
     border: 1px solid ${theme.background.primary};
-    display: ${isOpen ? 'block' : 'none'};
   `}
 `;
 
@@ -59,15 +62,17 @@ const Select = ({ options = [], onChange, value }) => {
     <Wrapper onClick={useCallback(() => setOpen(!isOpen), [isOpen])}>
       <StyledSelect>
         {selectedValue.label}
-        <OptionsWrapper isOpen={isOpen} ref={optionsWrapperRef}>
-          {options.map(option => (
-            <SelectOption key={option.value} onClick={() => onChange(option)}>
-              {option.label}
-            </SelectOption>
-          ))}
-        </OptionsWrapper>
+        <CSSTransition in={isOpen} timeout={250} unmountOnExit>
+          <OptionsWrapper ref={optionsWrapperRef}>
+            {options.map(option => (
+              <SelectOption key={option.value} onClick={() => onChange(option)}>
+                {option.label}
+              </SelectOption>
+            ))}
+          </OptionsWrapper>
+        </CSSTransition>
       </StyledSelect>
-      <StyledDropdownArrow />
+      <StyledDropdownArrow active={isOpen} />
     </Wrapper>
   );
 };
