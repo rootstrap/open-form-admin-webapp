@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect } from 'react';
 import { Formik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import * as Yup from 'yup';
@@ -35,7 +35,7 @@ const CreateFormPage = () => {
         validationSchema={Yup.object().shape({
           name: Yup.string().required(<FormattedMessage id="create-form-page.name.empty" />)
         })}
-        onSubmit={useCallback(values => dispatch(createForm(values, history)), [dispatch, history])}
+        onSubmit={values => dispatch(createForm(values, history))}
         enableReinitialize
       >
         {({ isSubmitting }) => (

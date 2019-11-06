@@ -1,7 +1,6 @@
-import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 
-export default (action, ...dependencies) => {
+export default action => {
   const dispatch = useDispatch();
-  return useCallback(payload => dispatch(action(payload)), [dispatch, action, ...dependencies]);
+  return payload => dispatch(action(payload));
 };
