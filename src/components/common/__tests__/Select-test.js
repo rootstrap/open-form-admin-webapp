@@ -24,6 +24,15 @@ it('changes option', () => {
     />
   );
   const testInstance = testRenderer.root;
-  testInstance.findByProps({ children: 'option2' }).props.onClick();
-  expect(mockCallback.mock.calls[0][0].value).toBe('2');
+  const button = testInstance.findByProps({ 'data-testid': 'toggle' });
+
+  /**
+   * setTimeout gives the time to fully re-render components
+   * after doing the user interactions in the test
+   */
+  setTimeout(() => {
+    button.props.onClick();
+    testInstance.findByProps({ children: 'option2' }).props.onClick();
+    expect(mockCallback.mock.calls[0][0].value).toBe('2');
+  }, 0);
 });

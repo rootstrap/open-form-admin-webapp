@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import styled, { ThemeProvider, createGlobalStyle, css } from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 
+import { useSession } from 'hooks';
 import RouteFromPath from 'components/routes/RouteFromPath';
 import mobile from 'utils/styles/mobile';
 import routesPaths from 'constants/routesPaths';
@@ -29,12 +30,13 @@ const AppWrapper = styled.div`
 `;
 
 const App = () => {
+  const { authenticated } = useSession();
   return (
     <ThemeProvider theme={theme}>
       <AppWrapper>
         <GlobalStyle />
         <Router>
-          <Nav>
+          <Nav authenticated={authenticated}>
             <ListItem>
               <NavLink to={routesPaths.forms}>
                 <FormattedMessage id="nav.forms" />

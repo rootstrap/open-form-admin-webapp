@@ -1,27 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
+.c2.enter {
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.c2.enter-active {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+  -webkit-transition: -webkit-transform 250ms;
+  -webkit-transition: transform 250ms;
+  transition: transform 250ms;
+}
+
+.c2.enter-done {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.c2.exit {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.c2.exit-active {
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: -webkit-transform 250ms;
+  -webkit-transition: transform 250ms;
+  transition: transform 250ms;
+}
+
 .c3 {
-  display: block;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  height: 40px;
-  width: 100%;
-  text-align: initial;
-  border-width: 0;
-  padding: 0 0.7rem;
-  outline: none;
-  background-color: #f2f2f2;
-  border-radius: 2px;
-}
-
-.c3:hover {
-  color: white;
-  background-color: #56ccf2;
-}
-
-.c4 {
   position: absolute;
   right: 0.7rem;
 }
@@ -61,48 +77,18 @@ exports[`renders correctly 1`] = `
   border-radius: 2px;
 }
 
-.c2 {
-  position: absolute;
-  top: 50px;
-  left: 0;
-  width: 100%;
-  max-height: 160px;
-  overflow-y: scroll;
-  background-color: #f2f2f2;
-  border-radius: 2px;
-  border: 1px solid #f2f2f2;
-  display: none;
-}
-
 <div
   className="c0"
+  data-testid="toggle"
   onClick={[Function]}
 >
   <div
     className="c1"
   >
     option1
-    <div
-      className="c2"
-    >
-      <button
-        className="c3"
-        onClick={[Function]}
-        type="button"
-      >
-        option1
-      </button>
-      <button
-        className="c3"
-        onClick={[Function]}
-        type="button"
-      >
-        option2
-      </button>
-    </div>
   </div>
   <svg
-    className="c4"
+    className="c2 c3"
     fill="none"
     height="8"
     viewBox="0 0 15 8"
