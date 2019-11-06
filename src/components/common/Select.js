@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef } from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import { CSSTransition } from 'react-transition-group';
@@ -56,10 +56,10 @@ const Select = ({ options = [], onChange, value }) => {
   const selectedValue = options.find(option => option.value === value) || {};
   const [isOpen, setOpen] = useState(false);
   const optionsWrapperRef = useRef(null);
-  useOutsideAlerter(optionsWrapperRef, useCallback(() => isOpen && setOpen(false), [isOpen]));
+  useOutsideAlerter(optionsWrapperRef, () => isOpen && setOpen(false));
 
   return (
-    <Wrapper onClick={useCallback(() => setOpen(!isOpen), [isOpen])}>
+    <Wrapper onClick={() => setOpen(!isOpen)}>
       <StyledSelect>
         {selectedValue.label}
         <CSSTransition in={isOpen} timeout={250} unmountOnExit>
