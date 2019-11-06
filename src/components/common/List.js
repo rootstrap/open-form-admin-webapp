@@ -6,4 +6,5 @@ export default styled.ul`
   list-style: none;
   margin: 0 0.75em;
   padding: 0;
+  word-wrap: break-word;
 `;
