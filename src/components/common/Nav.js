@@ -10,7 +10,6 @@ import DropdownArrow from 'components/common/DropdownArrow';
 import List from 'components/common/List';
 import Link from 'components/common/Link';
 import { transitionHeight } from 'utils/styles/transition';
-import { useSession } from 'hooks';
 
 const StyledNav = styled.nav`
   display: flex;
@@ -91,8 +90,7 @@ const StyledDropdownArrow = styled(DropdownArrow)`
   left: 0;
 `;
 
-const Nav = ({ children }) => {
-  const { authenticated } = useSession();
+const Nav = ({ children, authenticated }) => {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <StyledNav>
@@ -113,7 +111,12 @@ const Nav = ({ children }) => {
 };
 
 Nav.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  authenticated: PropTypes.bool
+};
+
+Nav.defaultProps = {
+  authenticated: false
 };
 
 export default Nav;

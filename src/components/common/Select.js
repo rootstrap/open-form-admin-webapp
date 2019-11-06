@@ -59,7 +59,7 @@ const Select = ({ options = [], onChange, value }) => {
   useOutsideAlerter(optionsWrapperRef, () => isOpen && setOpen(false));
 
   return (
-    <Wrapper onClick={() => setOpen(!isOpen)}>
+    <Wrapper onClick={() => setOpen(!isOpen)} data-testid="toggle">
       <StyledSelect>
         {selectedValue.label}
         <CSSTransition in={isOpen} timeout={250} unmountOnExit>
