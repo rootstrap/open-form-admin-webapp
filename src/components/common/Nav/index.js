@@ -5,8 +5,8 @@ import { CSSTransition } from 'react-transition-group';
 import routes from 'constants/routesPaths';
 import Logo from 'components/common/Logo';
 import Menu from './Menu.styled';
-import NavList from './NavList.styled';
-import StyledNav, { LogoLink, DesktopContainer, StyledDropdownArrow } from './Nav.styled';
+import MobileContainer from './MobileContainer.styled';
+import StyledNav, { LogoLink, DesktopContainer, StyledDropdownArrow, NavList } from './Nav.styled';
 
 const Nav = ({ children, authenticated }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -22,7 +22,9 @@ const Nav = ({ children, authenticated }) => {
         <StyledDropdownArrow active={showMenu} />
       </Menu>
       <CSSTransition in={showMenu} timeout={250} unmountOnExit>
-        <NavList>{children}</NavList>
+        <MobileContainer>
+          <NavList>{children}</NavList>
+        </MobileContainer>
       </CSSTransition>
     </StyledNav>
   );

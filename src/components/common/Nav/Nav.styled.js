@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import mobile from 'utils/styles/mobile';
 import DropdownArrow from 'components/common/DropdownArrow';
 import Link from 'components/common/Link';
+import List from 'components/common/List';
 
 export const LogoLink = styled(Link)`
   padding-left: 1rem;
@@ -14,6 +15,16 @@ export const DesktopContainer = styled.div`
   ${mobile(css`
     display: none;
   `)}
+`;
+
+export const NavList = styled(List)`
+  flex-direction: row;
+  align-items: center;
+
+  & > li {
+    display: inline-block;
+    margin: 0 1rem;
+  }
 `;
 
 export const StyledDropdownArrow = styled(DropdownArrow)`

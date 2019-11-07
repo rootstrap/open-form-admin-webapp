@@ -1,6 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
+.c4 {
+  display: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-right: 1rem;
+}
+
 .c5.enter {
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -37,17 +51,17 @@ exports[`renders correctly 1`] = `
   transition: transform 250ms;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background: #f2f2f2;
-  height: 3rem;
+.c1 {
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 0.1em 0.2em;
+  color: #56ccf2;
+  padding-left: 1rem;
+}
+
+.c2 {
+  display: none;
 }
 
 .c3 {
@@ -76,39 +90,37 @@ exports[`renders correctly 1`] = `
   margin: 0 1rem;
 }
 
-.c1 {
-  font-weight: 600;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  padding: 0.1em 0.2em;
-  color: #56ccf2;
-  padding-left: 1rem;
-}
-
-.c4 {
-  display: none;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  background: none;
-  position: relative;
-  top: 0;
-  left: 0;
-  height: 1.5rem;
-  width: 1.5rem;
-  margin-right: 1rem;
-}
-
-.c2 {
-  display: none;
-}
-
 .c6 {
   height: 1.5rem;
   width: 1.5rem;
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #f2f2f2;
+  height: 3rem;
+}
+
+@media (max-width:50em) {
+  .c4 {
+    display: none;
+  }
+}
+
+@media (max-width:50em) {
+  .c2 {
+    display: none;
+  }
 }
 
 @media (max-width:50em) {
@@ -121,49 +133,6 @@ exports[`renders correctly 1`] = `
     width: 100%;
     left: 0;
     top: 0;
-  }
-}
-
-@media (max-width:50em) {
-  .c3 {
-    position: absolute;
-    top: 3.2rem;
-    left: 0;
-    width: 100%;
-    margin: 0;
-    overflow: hidden;
-    height: 2.5rem;
-    max-height: 2.5rem;
-    background-color: #f2f2f2;
-    border: 1px solid #f2f2f2;
-  }
-
-  .c3.enter {
-    max-height: 0;
-  }
-
-  .c3.enter-active {
-    max-height: 2.5rem;
-    -webkit-transition: max-height 250ms;
-    transition: max-height 250ms;
-  }
-
-  .c3.exit-active {
-    max-height: 0;
-    -webkit-transition: max-height 250ms;
-    transition: max-height 250ms;
-  }
-}
-
-@media (max-width:50em) {
-  .c4 {
-    display: none;
-  }
-}
-
-@media (max-width:50em) {
-  .c2 {
-    display: none;
   }
 }
 
