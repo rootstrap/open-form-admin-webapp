@@ -4,13 +4,8 @@ import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 
 import routes from 'constants/routesPaths';
-import {
-  getFormCategories,
-  getFormsByCategory,
-  getFormError,
-  getFormIsFetching
-} from 'selectors/formSelectors';
-import { fetchFormCategories, fetchForms } from 'actions/formActions';
+import { getFormCategories, getForms, getErrorMessage } from 'selectors';
+import { loadFormCategories, loadForms } from 'actions';
 import Header from 'components/common/Header';
 import Title from 'components/common/Title';
 import Subtitle from 'components/common/Subtitle';
@@ -29,21 +24,20 @@ const ListWrapper = styled.div`
 `;
 
 const Forms = () => {
-  const formCategories = useSelector(getFormCategories);
-  const forms = useSelector(getFormsByCategory);
-  const error = useSelector(getFormError);
-  const isFetching = useSelector(getFormIsFetching);
+  const { formCategories, isFetching } = useSelector(getFormCategories);
+  const getFormsByCategory = useSelector(getForms);
+  const errorMessage = useSelector(getErrorMessage);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchFormCategories());
+    dispatch(loadFormCategories());
   }, [dispatch]);
 
   useEffect(() => {
     formCategories.forEach(({ id }) => {
-      dispatch(fetchForms(id));
+      dispatch(loadForms(id));
     });
-  }, [formCategories, dispatch]);
+  }, [formCategories.length]);
 
   return (
     <>
@@ -56,26 +50,28 @@ const Forms = () => {
         </Link>
       </Header>
       <ListWrapper>
-        {error ||
+        {errorMessage ||
           (isFetching && !formCategories.length ? (
             <Loading />
           ) : (
-            formCategories.map(
-              ({ id, name }) =>
-                forms[id] &&
-                forms[id].length > 0 && (
-                  <React.Fragment key={id}>
-                    <Subtitle>
-                      {name} <FormattedMessage id="forms.category" />
-                    </Subtitle>
-                    <FormsList>
-                      {forms[id].map(form => (
-                        <FormsListItem key={form.id}>{form.name}</FormsListItem>
+            formCategories.map(({ id, name }) => {
+              const { forms } = getFormsByCategory(id);
+              return !forms.length ? null : (
+                <React.Fragment key={id}>
+                  <Subtitle>
+                    {name} <FormattedMessage id="forms.category" />
+                  </Subtitle>
+                  <FormsList>
+                    {forms &&
+                      forms.map(form => (
+                        <FormsListItem key={form.id} {...form}>
+                          {form.name}
+                        </FormsListItem>
                       ))}
-                    </FormsList>
-                  </React.Fragment>
-                )
-            )
+                  </FormsList>
+                </React.Fragment>
+              );
+            })
           ))}
       </ListWrapper>
     </>

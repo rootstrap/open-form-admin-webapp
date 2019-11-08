@@ -5,8 +5,8 @@ import * as Yup from 'yup';
 import { useHistory } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 
-import { fetchFormCategories, createForm } from 'actions/formActions';
-import { getFormCategories } from 'selectors/formSelectors';
+import { loadFormCategories, submitForm } from 'actions';
+import { getFormCategories } from 'selectors';
 import Select from 'components/formik/Select';
 import TextInput from 'components/formik/TextInput';
 import Button from 'components/common/Button';
@@ -15,12 +15,12 @@ import Title from 'components/common/Title';
 import Form from 'components/common/Form';
 
 const CreateFormPage = () => {
-  const formCategories = useSelector(getFormCategories);
+  const { formCategories } = useSelector(getFormCategories);
   const dispatch = useDispatch();
   const history = useHistory();
 
   useEffect(() => {
-    dispatch(fetchFormCategories());
+    dispatch(loadFormCategories());
   }, [dispatch]);
 
   return (
@@ -35,7 +35,7 @@ const CreateFormPage = () => {
         validationSchema={Yup.object().shape({
           name: Yup.string().required(<FormattedMessage id="create-form-page.name.empty" />)
         })}
-        onSubmit={values => dispatch(createForm(values, history))}
+        onSubmit={values => dispatch(submitForm(values, history))}
         enableReinitialize
       >
         {({ isSubmitting }) => (

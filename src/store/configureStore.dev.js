@@ -7,13 +7,14 @@ import thunkMiddleware from 'redux-thunk';
 import { persistStore } from 'redux-persist';
 
 import rootReducer from 'reducers';
+import api from '../middleware/api';
 
 export default function configureStore(initialState) {
   const store = createStore(
     rootReducer,
     initialState,
     compose(
-      applyMiddleware(thunkMiddleware),
+      applyMiddleware(thunkMiddleware, api),
       window.__REDUX_DEVTOOLS_EXTENSION__ ? window.window.__REDUX_DEVTOOLS_EXTENSION__() : f => f // add support for Redux dev tools
     )
   );
