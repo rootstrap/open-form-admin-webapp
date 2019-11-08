@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { CSSTransition } from 'react-transition-group';
 
 import routes from 'constants/routesPaths';
-import Logo from 'components/common/Logo';
+import { Logo } from 'components/common';
 import Menu from './Menu.styled';
 import MobileContainer from './MobileContainer.styled';
 import StyledNav, { LogoLink, DesktopContainer, StyledDropdownArrow, NavList } from './Nav.styled';

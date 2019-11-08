@@ -9,8 +9,7 @@ import mobile from 'utils/styles/mobile';
 import routesPaths from 'constants/routesPaths';
 import theme from 'constants/theme';
 import Nav from 'components/common/Nav';
-import NavLink from 'components/common/NavLink';
-import ListItem from 'components/common/ListItem';
+import { NavLink, ListItem } from 'components/common';
 import routes from '../routes';
 
 const GlobalStyle = createGlobalStyle`

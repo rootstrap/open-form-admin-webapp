@@ -1,3 +1,3 @@
-import FormsList from 'components/common/List';
+import { List } from 'components/common';
 
-export default FormsList;
+export default List;
