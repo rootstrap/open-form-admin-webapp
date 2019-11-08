@@ -3,8 +3,7 @@ import { func, bool } from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 
-import Loading from 'components/common/Loading';
-import Input from 'components/common/Input';
+import { Loading, Input } from 'components/common';
 import { validations, signUp } from 'utils/constraints';
 
 const messages = defineMessages({

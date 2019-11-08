@@ -1,9 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import mobile from 'utils/styles/mobile';
-import DropdownArrow from 'components/common/DropdownArrow';
-import Link from 'components/common/Link';
-import List from 'components/common/List';
+import { DropdownArrow, Link, List } from 'components/common';
 
 export const LogoLink = styled(Link)`
   padding-left: 1rem;

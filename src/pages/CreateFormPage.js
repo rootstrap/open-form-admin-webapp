@@ -9,10 +9,7 @@ import { loadFormCategories, submitForm } from 'actions';
 import { getFormCategories } from 'selectors';
 import Select from 'components/formik/Select';
 import TextInput from 'components/formik/TextInput';
-import Button from 'components/common/Button';
-import Header from 'components/common/Header';
-import Title from 'components/common/Title';
-import Form from 'components/common/Form';
+import { Button, Header, Title, Form } from 'components/common';
 
 const CreateFormPage = () => {
   const { formCategories } = useSelector(getFormCategories);

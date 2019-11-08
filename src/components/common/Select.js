@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 import { CSSTransition } from 'react-transition-group';
 
 import useOutsideAlerter from 'hooks/useOutsideAlerter';
-import DropdownArrow from 'components/common/DropdownArrow';
-import SelectOption from 'components/common/SelectOption';
+import { DropdownArrow, SelectOption } from 'components/common';
 import { transitionHeight } from 'utils/styles/transition';
 
 const StyledDropdownArrow = styled(DropdownArrow)`

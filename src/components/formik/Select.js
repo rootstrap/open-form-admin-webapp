@@ -2,9 +2,7 @@ import React from 'react';
 import { useField } from 'formik';
 import PropTypes from 'prop-types';
 
-import Select from 'components/common/Select';
-import FormGroup from 'components/common/FormGroup';
-import Label from 'components/common/Label';
+import { Select, FormGroup, Label } from 'components/common';
 
 const FormikSelect = ({ name, label, ...props }) => {
   const [field] = useField(name);

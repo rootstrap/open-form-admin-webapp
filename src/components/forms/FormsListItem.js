@@ -2,8 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import ListItem from 'components/common/ListItem';
-import DeleteIcon from 'components/common/DeleteIcon';
+import { ListItem, DeleteIcon } from 'components/common';
 
 const StyledListItem = styled(ListItem)`
   color: ${({ theme }) => theme.color.primary};

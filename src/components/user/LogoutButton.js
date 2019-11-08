@@ -3,7 +3,7 @@ import { FormattedMessage } from 'react-intl';
 
 import useDispatch from 'hooks/useDispatch';
 import { logout } from 'actions/userActions';
-import Button from 'components/common/Button';
+import { Button } from 'components/common';
 
 const LogoutButton = () => {
   const logoutRequest = useDispatch(logout);
