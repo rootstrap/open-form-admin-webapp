@@ -1,16 +1,11 @@
-import union from 'lodash/union';
-
 // Creates a reducer managing pagination, given the action types to handle,
 // and a function telling how to extract the key from an action.
-const paginate = ({ types, mapActionToKey }) => {
+const paginate = ({ types, mapActionToKey = () => {} }) => {
   if (!Array.isArray(types) || types.length !== 3) {
     throw new Error('Expected types to be an array of three elements.');
   }
   if (!types.every(t => typeof t === 'string')) {
     throw new Error('Expected types to be strings.');
-  }
-  if (typeof mapActionToKey !== 'function') {
-    throw new Error('Expected mapActionToKey to be a function.');
   }
 
   const [requestType, successType, failureType] = types;
@@ -28,13 +23,14 @@ const paginate = ({ types, mapActionToKey }) => {
       case requestType:
         return {
           ...state,
+          pageCount: action.refetch ? state.pageCount - 1 : state.pageCount,
           isFetching: true
         };
       case successType:
         return {
           ...state,
           isFetching: false,
-          ids: union(state.ids, action.response.result),
+          ids: action.response.result,
           nextPageUrl: action.response.nextPageUrl,
           pageCount: state.pageCount + 1
         };
@@ -55,13 +51,9 @@ const paginate = ({ types, mapActionToKey }) => {
       case successType:
       case failureType: {
         const key = mapActionToKey(action);
-        if (typeof key !== 'string' && typeof key !== 'number') {
-          throw new Error('Expected key to be a string or number.');
-        }
-        return {
-          ...state,
-          [key]: updatePagination(state[key], action)
-        };
+        return key
+          ? { ...state, [key]: updatePagination(state[key], action) }
+          : updatePagination({ ...state, pageCount: state.pageCount || 0 }, action);
       }
       default:
         return state;

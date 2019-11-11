@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import routes from 'constants/routesPaths';
 import { getFormCategories, getForms, getErrorMessage } from 'selectors';
-import { loadFormCategories, loadForms } from 'actions';
+import { loadFormCategories, loadForms, deleteForm } from 'actions';
 import { Loading, Link, Subtitle, Title, Header } from 'components/common';
 import FormsList from 'components/forms/FormsList';
 import FormsListItem from 'components/forms/FormsListItem';
@@ -60,7 +60,11 @@ const Forms = () => {
                   <FormsList>
                     {forms &&
                       forms.map(form => (
-                        <FormsListItem key={form.id} {...form}>
+                        <FormsListItem
+                          {...form}
+                          key={form.id}
+                          onDelete={() => dispatch(deleteForm(form))}
+                        >
                           {form.name}
                         </FormsListItem>
                       ))}
