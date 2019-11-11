@@ -19,17 +19,25 @@ const StyledListItem = styled(ListItem)`
   }
 `;
 
-const FormsListItem = ({ children }) => (
+const Button = styled.button`
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
+`;
+
+const FormsListItem = ({ children, onDelete }) => (
   <StyledListItem>
     <div>{children}</div>
-    <div>
+    <Button type="button" onClick={onDelete}>
       <DeleteIcon />
-    </div>
+    </Button>
   </StyledListItem>
 );
 
 FormsListItem.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  onDelete: PropTypes.func.isRequired
 };
 
 export default FormsListItem;

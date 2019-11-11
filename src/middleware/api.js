@@ -69,7 +69,7 @@ export default store => next => action => {
   };
 
   const [requestType, successType, failureType] = types;
-  next(actionWith({ type: requestType }));
+  next(actionWith({ type: requestType, refetch: callAPI.refetch }));
 
   return callApi(endpoint, schema, data).then(
     response =>

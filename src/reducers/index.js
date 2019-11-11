@@ -33,7 +33,6 @@ const errorMessage = (state = null, action) => {
 // Updates the pagination data for different actions.
 const pagination = combineReducers({
   formCategories: paginate({
-    mapActionToKey: () => 'list',
     types: [
       ActionTypes.FORM_CATEGORIES_REQUEST,
       ActionTypes.FORM_CATEGORIES_SUCCESS,
