@@ -48,5 +48,13 @@ export default {
 
   forms: {
     category: 'Categoría'
+  },
+
+  section: {
+    saveChanges: 'Guardar cambios',
+    name: {
+      empty: 'Requerido'
+    },
+    link: 'Agregar sección'
   }
 };

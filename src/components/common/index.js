@@ -18,3 +18,5 @@ export Subtitle from './Subtitle';
 export TextInput from './TextInput';
 export Title from './Title';
 export Version from './Version';
+export EditIcon from './EditIcon';
+export Separator from './Separator';

@@ -4,12 +4,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as Yup from 'yup';
 import { useHistory } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
+import styled from 'styled-components';
 
 import { loadFormCategories, submitForm } from 'actions';
 import { getFormCategories } from 'selectors';
 import Select from 'components/formik/Select';
 import TextInput from 'components/formik/TextInput';
 import { Button, Header, Title, Form } from 'components/common';
+
+const CreateForm = styled(Form)`
+  max-width: 730px;
+  width: 50%;
+  margin: 1rem 0;
+`;
 
 const CreateFormPage = () => {
   const { formCategories } = useSelector(getFormCategories);
@@ -36,7 +43,7 @@ const CreateFormPage = () => {
         enableReinitialize
       >
         {({ isSubmitting }) => (
-          <Form>
+          <CreateForm>
             <TextInput name="name" label={<FormattedMessage id="create-form-page.name.label" />} />
             <Select
               name="category"
@@ -46,7 +53,7 @@ const CreateFormPage = () => {
             <Button type="submit" disabled={isSubmitting}>
               <FormattedMessage id="create-form-page.submit" />
             </Button>
-          </Form>
+          </CreateForm>
         )}
       </Formik>
     </>

@@ -24,12 +24,15 @@ const callApi = async (endpoint, schema, data) => {
 
 const formCategorySchema = new schema.Entity('formCategories');
 const formSchema = new schema.Entity('forms');
+const sectionSchema = new schema.Entity('sections');
 
 // Schemas for API responses.
 export const Schemas = {
   FORM_CATEGORY_ARRAY: [formCategorySchema],
   FORM: formSchema,
-  FORM_ARRAY: [formSchema]
+  FORM_ARRAY: [formSchema],
+  SECTION_ARRAY: [sectionSchema],
+  SECTION: sectionSchema
 };
 
 // Action key that carries API call info interpreted by this Redux middleware.

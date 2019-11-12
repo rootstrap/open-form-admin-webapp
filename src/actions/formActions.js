@@ -18,8 +18,8 @@ const fetchForms = (category, refetch) => ({
 });
 
 export const loadForms = (category, refetch) => (dispatch, getState) => {
-  const { forms } = getState().entities;
-  if (!Object.keys(forms).length || refetch) {
+  const { formsByCategory } = getState().pagination;
+  if (!formsByCategory[category] || refetch) {
     dispatch(fetchForms(category, refetch));
   }
 };
@@ -33,7 +33,8 @@ const createForm = ({ category, ...data }) => ({
     types: [CREATE_FORM_REQUEST, CREATE_FORM_SUCCESS, CREATE_FORM_FAILURE],
     endpoint: `admin/form_categories/${category}/forms`,
     schema: Schemas.FORM,
-    data
+    // adding version as is a requirement from the api
+    data: { version: 1, ...data }
   }
 });
 
@@ -53,3 +54,22 @@ export const deleteForm = ({ id, formCategoryId }) =>
       dispatch(loadForms(formCategoryId, true));
     }
   );
+
+export const FORM_REQUEST = 'FORM_REQUEST';
+export const FORM_SUCCESS = 'FORM_SUCCESS';
+export const FORM_FAILURE = 'FORMS_FAILURE';
+
+const fetchForm = id => ({
+  [CALL_API]: {
+    types: [FORM_REQUEST, FORM_SUCCESS, FORM_FAILURE],
+    endpoint: `forms/${id}`,
+    schema: Schemas.FORM
+  }
+});
+
+export const loadForm = id => (dispatch, getState) => {
+  const { forms } = getState().entities;
+  if (!forms[id]) {
+    dispatch(fetchForm(id));
+  }
+};

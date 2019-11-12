@@ -5,7 +5,8 @@ const theme = {
     text: '#4f4f4f'
   },
   background: {
-    primary: '#f2f2f2'
+    primary: '#f2f2f2',
+    border: '#bdbdbd'
   },
   border: {
     radius: '2px'
