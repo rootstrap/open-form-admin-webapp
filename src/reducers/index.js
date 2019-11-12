@@ -39,9 +39,17 @@ const pagination = combineReducers({
       ActionTypes.FORM_CATEGORIES_FAILURE
     ]
   }),
-  forms: paginate({
+  formsByCategory: paginate({
     mapActionToKey: action => action.category,
     types: [ActionTypes.FORMS_REQUEST, ActionTypes.FORMS_SUCCESS, ActionTypes.FORMS_FAILURE]
+  }),
+  sectionsByForm: paginate({
+    mapActionToKey: action => action.form,
+    types: [
+      ActionTypes.SECTIONS_REQUEST,
+      ActionTypes.SECTIONS_SUCCESS,
+      ActionTypes.SECTIONS_FAILURE
+    ]
   })
 });
 

@@ -6,6 +6,7 @@ import LoginPage from 'pages/LoginPage';
 import SignUpPage from 'pages/SignUpPage';
 import CreateFormPage from 'pages/CreateFormPage';
 import Forms from 'pages/Forms';
+import FormPage from 'pages/FormPage';
 import NotFoundPage from 'pages/NotFoundPage';
 
 const routes = [
@@ -31,6 +32,12 @@ const routes = [
   {
     path: routesPaths.forms,
     component: <Forms />,
+    private: true,
+    exact: true
+  },
+  {
+    path: routesPaths.form,
+    component: <FormPage />,
     private: true
   },
   {

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import { ListItem, DeleteIcon, Link } from 'components/common';
+import { ListItem, DeleteIcon, EditIcon } from 'components/common';
 
 const StyledListItem = styled(ListItem)`
   color: ${({ theme }) => theme.color.primary};
@@ -15,6 +15,7 @@ const StyledListItem = styled(ListItem)`
 
   > div:first-child {
     width: 70%;
+    font-weight: 600;
   }
 `;
 
@@ -23,23 +24,33 @@ const Button = styled.button`
   outline: none;
   cursor: pointer;
   background: none;
+  padding: 0 0.5rem;
+  margin: 0 0.5rem;
+  display: flex;
 `;
 
-const FormsListItem = ({ children, onDelete, id }) => (
-  <Link to={`/forms/${id}`}>
-    <StyledListItem>
-      <div>{children}</div>
+const Actions = styled.div`
+  display: flex;
+`;
+
+const SectionListItem = ({ children, onDelete, onEdit }) => (
+  <StyledListItem>
+    <div>{children}</div>
+    <Actions>
+      <Button type="button" onClick={onEdit}>
+        <EditIcon />
+      </Button>
       <Button type="button" onClick={onDelete}>
         <DeleteIcon />
       </Button>
-    </StyledListItem>
-  </Link>
+    </Actions>
+  </StyledListItem>
 );
 
-FormsListItem.propTypes = {
+SectionListItem.propTypes = {
   children: PropTypes.node.isRequired,
   onDelete: PropTypes.func.isRequired,
-  id: PropTypes.number.isRequired
+  onEdit: PropTypes.func.isRequired
 };
 
-export default FormsListItem;
+export default SectionListItem;

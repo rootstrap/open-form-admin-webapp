@@ -37,7 +37,7 @@ const App = () => {
         <Router>
           <Nav authenticated={authenticated}>
             <ListItem>
-              <NavLink to={routesPaths.forms}>
+              <NavLink to={routesPaths.forms} exact>
                 <FormattedMessage id="nav.forms" />
               </NavLink>
             </ListItem>

@@ -7,3 +7,4 @@ export const resetErrorMessage = () => ({
 
 export * from './categoriesActions';
 export * from './formActions';
+export * from './sectionActions';

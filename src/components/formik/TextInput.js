@@ -9,7 +9,7 @@ const FormikTextInput = ({ name, label, type }) => {
   const [field] = useField(name);
   return (
     <FormGroup>
-      <Label htmlFor={name}>{label}</Label>
+      {label && <Label htmlFor={name}>{label}</Label>}
       <TextInput {...field} type={type} />
       <ErrorMessage name={name} />
     </FormGroup>
@@ -18,7 +18,7 @@ const FormikTextInput = ({ name, label, type }) => {
 
 FormikTextInput.propTypes = {
   name: PropTypes.string.isRequired,
-  label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   type: PropTypes.string
 };
 

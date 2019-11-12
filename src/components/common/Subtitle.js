@@ -4,4 +4,5 @@ export default styled.h2`
   font-weight: bold;
   letter-spacing: -0.3px;
   color: ${({ theme }) => theme.color.text};
+  margin-bottom: 0;
 `;
