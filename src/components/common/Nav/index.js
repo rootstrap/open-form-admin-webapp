@@ -8,17 +8,17 @@ import Menu from './Menu.styled';
 import MobileContainer from './MobileContainer.styled';
 import StyledNav, { LogoLink, DesktopContainer, StyledDropdownArrow, NavList } from './Nav.styled';
 
-const Nav = ({ children, authenticated }) => {
+export default function Nav({ children }) {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <StyledNav>
       <LogoLink to={routes.index}>
         <Logo />
       </LogoLink>
-      <DesktopContainer authenticated={authenticated}>
+      <DesktopContainer>
         <NavList>{children}</NavList>
       </DesktopContainer>
-      <Menu onClick={() => setShowMenu(!showMenu)} authenticated={authenticated}>
+      <Menu onClick={() => setShowMenu(!showMenu)}>
         <StyledDropdownArrow active={showMenu} />
       </Menu>
       <CSSTransition in={showMenu} timeout={250} unmountOnExit>
@@ -28,15 +28,8 @@ const Nav = ({ children, authenticated }) => {
       </CSSTransition>
     </StyledNav>
   );
-};
+}
 
 Nav.propTypes = {
-  children: PropTypes.node.isRequired,
-  authenticated: PropTypes.bool
+  children: PropTypes.node.isRequired
 };
-
-Nav.defaultProps = {
-  authenticated: false
-};
-
-export default Nav;

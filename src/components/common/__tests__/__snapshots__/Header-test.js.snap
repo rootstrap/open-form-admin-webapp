@@ -1,17 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-.c2 {
-  -webkit-letter-spacing: -0.3px;
-  -moz-letter-spacing: -0.3px;
-  -ms-letter-spacing: -0.3px;
-  letter-spacing: -0.3px;
-  font-weight: bold;
-  font-size: 0.9em;
-  margin-bottom: 0.5rem;
-  color: #56ccf2;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -52,17 +41,10 @@ exports[`renders correctly 1`] = `
 <header
   className="c0"
 >
-  <div>
-    <div
-      className="c1"
-    >
-      important text
-    </div>
-    <div
-      className="c2"
-    >
-      ID:1 - Version 1
-    </div>
+  <div
+    className="c1"
+  >
+    important text
   </div>
 </header>
 `;

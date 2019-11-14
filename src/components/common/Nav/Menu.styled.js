@@ -15,6 +15,6 @@ export default styled.button`
   margin-right: 1rem;
 
   ${mobile(css`
-    display: ${({ authenticated }) => (authenticated ? 'block' : 'none')};
+    display: block;
   `)}
 `;

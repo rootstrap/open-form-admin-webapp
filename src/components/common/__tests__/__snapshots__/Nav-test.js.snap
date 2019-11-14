@@ -1,20 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-.c4 {
-  display: none;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  background: none;
-  position: relative;
-  top: 0;
-  left: 0;
-  height: 1.5rem;
-  width: 1.5rem;
-  margin-right: 1rem;
-}
-
 .c5.enter {
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -51,6 +37,20 @@ exports[`renders correctly 1`] = `
   transition: transform 250ms;
 }
 
+.c4 {
+  display: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-right: 1rem;
+}
+
 .c1 {
   font-weight: 600;
   -webkit-text-decoration: none;
@@ -61,7 +61,7 @@ exports[`renders correctly 1`] = `
 }
 
 .c2 {
-  display: none;
+  display: block;
 }
 
 .c3 {
@@ -73,7 +73,6 @@ exports[`renders correctly 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   list-style: none;
-  margin: 0 0.75em;
   padding: 0;
   word-wrap: break-word;
   -webkit-flex-direction: row;
@@ -113,7 +112,7 @@ exports[`renders correctly 1`] = `
 
 @media (max-width:50em) {
   .c4 {
-    display: none;
+    display: block;
   }
 }
 
