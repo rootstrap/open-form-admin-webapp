@@ -7,14 +7,8 @@
       "api/*": ["src/api/*"],
       "components/*": ["src/components/*"],
       "constants/*": ["src/constants/*"],
-      "hooks/*": ["src/hooks/*"],
-      "locales/*": ["src/locales/*"],
       "pages/*": ["src/pages/*"],
-      "reducers/*": ["src/reducers/*"],
       "selectors/*": ["src/selectors/*"],
-      "services/*": ["src/services/*"],
-      "store/*": ["src/store/*"],
-      "styles/*": ["src/styles/*"],
       "utils/*": ["src/utils/*"]
     }
   },

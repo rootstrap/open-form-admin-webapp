@@ -1,20 +1,16 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { setAutoFreeze } from 'immer';
-import { PersistGate } from 'redux-persist/integration/react';
 import { AppContainer, setConfig } from 'react-hot-loader';
 import { IntlProvider } from 'react-intl';
 import 'normalize.css';
 
 import api from 'api';
 import applyDefaultInterceptors from 'api/utils/applyDefaultInterceptors';
-import configureStore from 'store/configureStore';
 import App from 'components/App';
-import locales from 'locales';
 import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE } from 'constants/constants';
-
-setAutoFreeze(false);
+import configureStore from './store/configureStore';
+import locales from './locales';
 
 // Load service worker
 if (process.env.ENABLE_PWA) {
@@ -46,24 +42,22 @@ const supportedUserLocale = SUPPORTED_LANGUAGES.includes(usersLocale);
 const locale = supportedUserLocale ? usersLocale : DEFAULT_LANGUAGE;
 const messages = locales[locale];
 
-const { persistor, store } = configureStore();
+const store = configureStore();
 
-const renderApp = Component => {
+function renderApp(Component) {
   render(
     <IntlProvider locale={locale} messages={messages} defaultLocale="en">
       <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <AppContainer>
-            <Component />
-          </AppContainer>
-        </PersistGate>
+        <AppContainer>
+          <Component />
+        </AppContainer>
       </Provider>
     </IntlProvider>,
     document.getElementById('app')
   );
-};
+}
 
-applyDefaultInterceptors(store, api);
+applyDefaultInterceptors(api);
 renderApp(App);
 
 setConfig({ logLevel: 'no-errors-please' });

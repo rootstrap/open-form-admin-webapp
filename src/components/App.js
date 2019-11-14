@@ -1,10 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import styled, { ThemeProvider, createGlobalStyle, css } from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 
-import { useSession } from 'hooks';
-import RouteFromPath from 'components/routes/RouteFromPath';
 import mobile from 'utils/styles/mobile';
 import routesPaths from 'constants/routesPaths';
 import theme from 'constants/theme';
@@ -28,14 +26,13 @@ const AppWrapper = styled.div`
   `)}
 `;
 
-const App = () => {
-  const { authenticated } = useSession();
+export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <AppWrapper>
         <GlobalStyle />
         <Router>
-          <Nav authenticated={authenticated}>
+          <Nav>
             <ListItem>
               <NavLink to={routesPaths.forms} exact>
                 <FormattedMessage id="nav.forms" />
@@ -43,14 +40,14 @@ const App = () => {
             </ListItem>
           </Nav>
           <Switch>
-            {routes.map(route => (
-              <RouteFromPath key={`route-${route.path}`} {...route} />
+            {routes.map(({ component, ...route }) => (
+              <Route key={`route-${route.path}`} {...route}>
+                {component}
+              </Route>
             ))}
           </Switch>
         </Router>
       </AppWrapper>
     </ThemeProvider>
   );
-};
-
-export default App;
+}

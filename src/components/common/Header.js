@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { Version } from 'components/common';
-
 const Content = styled.div`
   display: flex;
   align-items: flex-end;
@@ -22,17 +20,14 @@ const StyledHeader = styled.header`
   }
 `;
 
-const Header = ({ children }) => (
-  <StyledHeader>
-    <div>
+export default function Header({ children }) {
+  return (
+    <StyledHeader>
       <Content>{children}</Content>
-      <Version>ID:1 - Version 1</Version>
-    </div>
-  </StyledHeader>
-);
+    </StyledHeader>
+  );
+}
 
 Header.propTypes = {
   children: PropTypes.node
 };
-
-export default Header;

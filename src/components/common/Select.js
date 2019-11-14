@@ -3,7 +3,6 @@ import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import { CSSTransition } from 'react-transition-group';
 
-import useOutsideAlerter from 'hooks/useOutsideAlerter';
 import { DropdownArrow, SelectOption } from 'components/common';
 import { transitionHeight } from 'utils/styles/transition';
 
@@ -51,11 +50,10 @@ const OptionsWrapper = styled.div`
   `}
 `;
 
-const Select = ({ options = [], onChange, value }) => {
+export default function Select({ options = [], onChange, value }) {
   const selectedValue = options.find(option => option.value === value) || {};
   const [isOpen, setOpen] = useState(false);
   const optionsWrapperRef = useRef(null);
-  useOutsideAlerter(optionsWrapperRef, () => isOpen && setOpen(false));
 
   return (
     <Wrapper onClick={() => setOpen(!isOpen)} data-testid="toggle">
@@ -74,7 +72,7 @@ const Select = ({ options = [], onChange, value }) => {
       <StyledDropdownArrow active={isOpen} />
     </Wrapper>
   );
-};
+}
 
 Select.propTypes = {
   options: PropTypes.arrayOf(
@@ -86,5 +84,3 @@ Select.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onChange: PropTypes.func.isRequired
 };
-
-export default Select;

@@ -8,7 +8,7 @@ export const LogoLink = styled(Link)`
 `;
 
 export const DesktopContainer = styled.div`
-  display: ${({ authenticated }) => (authenticated ? 'block' : 'none')};
+  display: block;
 
   ${mobile(css`
     display: none;

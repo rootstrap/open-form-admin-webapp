@@ -8,6 +8,7 @@ exports[`renders correctly 1`] = `
   -ms-letter-spacing: -0.3px;
   letter-spacing: -0.3px;
   color: #4f4f4f;
+  margin-bottom: 0;
 }
 
 <h2
