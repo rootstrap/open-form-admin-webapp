@@ -1,9 +1,9 @@
 export const getFormCategories = ({ pagination, entities }) => ({
   formCategories:
-    (pagination.formCategories.ids &&
-      pagination.formCategories.ids.map(id => entities.formCategories[id])) ||
+    (pagination.formCategories.list &&
+      pagination.formCategories.list.ids.map(id => entities.formCategories[id])) ||
     [],
-  isFetching: pagination.formCategories.isFetching
+  isFetching: pagination.formCategories.list && pagination.formCategories.list.isFetching
 });
 
 export const getForms = ({ pagination, entities }) => category => ({

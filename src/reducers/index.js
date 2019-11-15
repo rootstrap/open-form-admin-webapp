@@ -3,24 +3,12 @@ import { combineReducers } from 'redux';
 import * as ActionTypes from 'actions';
 import paginate from './paginate';
 import entities from './entities';
-
-// Updates error message to notify about the failed fetches.
-function errorMessage(state = null, action) {
-  const { type, error } = action;
-
-  if (type === ActionTypes.RESET_ERROR_MESSAGE) {
-    return null;
-  }
-  if (error) {
-    return error;
-  }
-
-  return state;
-}
+import errorMessage from './errorMessage';
 
 // Updates the pagination data for different actions.
 const pagination = combineReducers({
   formCategories: paginate({
+    mapActionToKey: () => 'list',
     types: [
       ActionTypes.FORM_CATEGORIES_REQUEST,
       ActionTypes.FORM_CATEGORIES_SUCCESS,

@@ -1,8 +1,13 @@
+import produce from 'immer';
 import merge from 'lodash/merge';
 
-export default function entities(state = { formCategories: {}, forms: {} }, action) {
-  if (action.response && action.response.entities) {
-    return merge({}, state, action.response.entities);
-  }
-  return state;
-}
+const entities = produce(
+  (draft, action) => {
+    if (action.response && action.response.entities) {
+      merge(draft, action.response.entities);
+    }
+  },
+  { formCategories: {}, forms: {} }
+);
+
+export default entities;

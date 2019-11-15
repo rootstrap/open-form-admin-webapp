@@ -115,6 +115,6 @@ describe('ignores response without entities', () => {
   });
 
   test('initial and next state are the same', () => {
-    expect(nextState).toStrictEqual(initialState);
+    expect(nextState).toBe(initialState);
   });
 });
