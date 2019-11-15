@@ -164,6 +164,7 @@
     "collectCoverage": true,
     "collectCoverageFrom": [
       "src/components/common/**",
+      "src/reducers/**",
       "!src/**/*.snap"
     ],
     "coverageThreshold": {
