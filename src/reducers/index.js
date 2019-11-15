@@ -1,15 +1,8 @@
 import { combineReducers } from 'redux';
-import merge from 'lodash/merge';
 
 import * as ActionTypes from 'actions';
 import paginate from './paginate';
-
-function entities(state = { formCategories: {}, forms: {} }, action) {
-  if (action.response && action.response.entities) {
-    return merge({}, state, action.response.entities);
-  }
-  return state;
-}
+import entities from './entities';
 
 // Updates error message to notify about the failed fetches.
 function errorMessage(state = null, action) {
