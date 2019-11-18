@@ -5,12 +5,12 @@ import PropTypes from 'prop-types';
 import { TextInput, FormGroup, Label } from 'components/common';
 import ErrorMessage from 'components/formik/ErrorMessage';
 
-const FormikTextInput = ({ name, label, type }) => {
+const FormikTextInput = ({ name, label, ...props }) => {
   const [field] = useField(name);
   return (
     <FormGroup>
       {label && <Label htmlFor={name}>{label}</Label>}
-      <TextInput {...field} type={type} />
+      <TextInput {...field} {...props} />
       <ErrorMessage name={name} />
     </FormGroup>
   );
@@ -19,7 +19,8 @@ const FormikTextInput = ({ name, label, type }) => {
 FormikTextInput.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  type: PropTypes.string
+  type: PropTypes.string,
+  placeholder: PropTypes.string
 };
 
 FormikTextInput.defaultProps = {

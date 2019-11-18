@@ -47,7 +47,8 @@ export default {
   section: {
     saveChanges: 'Save changes',
     name: {
-      empty: 'Required'
+      empty: 'Required',
+      placeholder: 'Name'
     },
     link: 'Add section'
   }

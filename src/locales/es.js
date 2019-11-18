@@ -53,7 +53,8 @@ export default {
   section: {
     saveChanges: 'Guardar cambios',
     name: {
-      empty: 'Requerido'
+      empty: 'Requerido',
+      placeholder: 'Nombre'
     },
     link: 'Agregar sección'
   }

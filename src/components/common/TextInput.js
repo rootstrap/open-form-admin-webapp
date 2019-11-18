@@ -6,6 +6,7 @@ export default styled.input`
   padding: 0.5rem 0.7rem;
   height: 40px;
   box-sizing: border-box;
+
   ${({ theme }) => css`
     background-color: ${theme.background.primary};
     border-radius: ${theme.border.radius};
